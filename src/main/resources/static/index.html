@@ -3,8 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        h1{
+        font-family: 'Oleo Script Swash Caps', cursive;
+        text-align: center;
+        }
+        #middle{
+            text-align: center;
+        }
+        .leftSide{
+          padding-inline-start: 0%;
+        }
+    </style>
 </head>
 <body>
-    hello world!@@@@
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- 상단 페이지 로고 -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>NERDPRESS</h1>
+        </div>
+      </div>
+
+    <!-- 검색창 -->
+      <div>
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">검색</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">웹소설 검색</a></li>
+            <li><a class="dropdown-item" href="#">작가검색</a></li>
+          </ul>
+          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+        </div>
+      </div>
+
+    <!-- 웹페이지들로 넘어가기 -->
+      <div>
+        <ul class="nav justify-content-around">
+          <li class="nav-item leftSide ">
+            <a class="nav-link active text-secondary" aria-current="page" href="#">월간베스트</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">최신순 웹소설 목록</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">작가목록</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 이미지 슬라이드 -->
+      <div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <!-- 이번생도 잘 부탁해 -->
+            <div class="carousel-item active">
+              <img src="https://tumblbug-pci.imgix.net/98cf4966a9c448c57f569b410313eb8c1a692714/e720f7b16a4439621508908aff5c14012178ed0f/a08fcb9d94b81d8aa22298c1876ee004f2eed400/4c909dec-877b-4912-92f3-b5e5a5e23e47.jpeg?ixlib=rb-1.1.0&w=1240&h=930&auto=format%2Ccompress&lossless=true&fit=crop&s=808edeecb6b3b31b9336c31a8d305f7c" class="d-block w-100" alt="...">
+            </div>
+            <!-- 그 해 우리는 -->
+            <div class="carousel-item">
+              <img src="https://img.etnews.com/photonews/2111/1471610_20211108090008_552_0001.jpg" class="d-block w-100" alt="...">
+            </div>
+            <!-- 하루만 네가 되고 싶어 -->
+            <div class="carousel-item">
+              <img src="https://tumblbug-pci.imgix.net/7ad81f8e5d8c79ed9534d70ee460540cab01def4/a72531e84932687022153d958335683c7a530d97/40212fb0d5ad3fdd2a92c8c3bf18d82767f728db/87397d12-3de8-41b0-8770-8905732cc0f3.png?ixlib=rb-1.1.0&w=1240&h=930&auto=format%2Ccompress&lossless=true&fit=crop&s=dd8a87d0441a1602ab986c18f0020c43" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://modo-phinf.pstatic.net/20190425_85/1556181378096aOCWu_PNG/mosapgJx5z.png?type=a1100" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://towerofgod.ngelgames.com/resources/front/images/img_twiter.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">이전 페이지</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">다음 페이지</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 작각 테이블 -->
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">순위</th>
+              <th scope="col">이름</th>
+              <th scope="col">작품</th>
+              <th scope="col">장르</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- About us -->
+      <div>
+        <footer>
+          <nav>
+              <a href='https://cocoder.tistory.com' target='_blank'>E-mail</a> |
+              <a href='https://github.com/cocoder16' target='_blank'>Github</a>
+          </nav>
+          <p>
+              <span>팀</span><br/>
+              <span>이메일 : jin5myung@naver.com</span><br/>
+              <span>Copyright 2022. bootstrap. All Rights Reserved.</span>
+          </p>
+      </footer>
+      </div>
+
+    
+    
+
+      
+
+
+
+      
 </body>
 </html>
