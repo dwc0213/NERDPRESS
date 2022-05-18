@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>작품등록 : NERDPRESS</title>
     <link rel="stylesheet" href="../../static/css/novel.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,163 +28,11 @@
 
             <div class="sta" id="gnb_height">
                 <h1>
-                    <a href="" title="NERD PRESS" class="h_txt_naver">NERD PRESS</a>
-                    <a href="/" title="웹소설" class="h_txt_novel N=a:STA.novel">N</a> <span class="line">|</span>
+                    <a href="" title="NERD PRESS" class=""h_txt_naver2>NERD PRESS</a>
+
                 </h1>
-                <style>
-        .gnb_lst {
-            display: block !important;
-        }
-    </style>
 
-                <!-- 검색 -->
-                <div class="srch_area">
-
-        <span class="srch_box">
-            <label for="searchKeyword" class="blind">제목 또는 작가명 검색</label>
-            <input type="text" class="input_txt _inputSearchKeyword" id="searchKeyword" placeholder="작품명, 작가명을 입력하세요." value="" maxlength="100">
-        </span>
-                    <button type="button" class="btn_search _searchBtn" id="searchBtn" onclick="clickcr(this, 'lnb.search', '', '', event)"><span class="ico_search">검색</span></button>
-                </div>
-                <!-- //검색 -->
             </div>
-            <!-- menu -->
-            <div class="menu_area" id="lnb_height">
-
-                <ul id="lnb" class="lnb">
-                    <li class="m1 ">
-                        <a href="/webnovel/weekday" class="lnb_link N=a:lnb.home"><span class="lnb_txt">홈</span></a>
-                    </li>
-
-                    <!--[D] 뉴블릿 상시 부착 .lnb_txt에 시 new 클래스 추가 -->
-                    <li class="m_super_casting ">
-                        <a href="/webnovel/superCasting" class="lnb_link N=a:lnb.supercasting"><span class="lnb_txt new">슈퍼캐스팅</span></a><span class="blind">(새로 추가됨)</span>
-
-
-                        <ul class="snb NE=a:story">
-
-
-
-                            <li class=""><a href="/webnovel/superCasting?story=BTS" class="sub_link NPI=a:BTS"><span class="sub_txt ">CHAKHO</span></a></li>
-
-
-
-                            <li class=""><a href="/webnovel/superCasting?story=ENHYPEN" class="sub_link NPI=a:ENHYPEN"><span class="sub_txt ">달의 제단</span></a></li>
-
-
-
-                            <li class=""><a href="/webnovel/superCasting?story=TXT" class="sub_link NPI=a:TXT"><span class="sub_txt ">별을 쫓는 소년들</span></a></li>
-
-                        </ul>
-                    </li>
-
-
-                    <li class="m3  ">
-                        <a href="/webnovel/weekdayList" class="lnb_link N=a:lnb.today"><span class="lnb_txt">오늘의 웹소설</span></a>
-
-                        <ul class="snb NE=a:tnb">
-                            <li class=""><a href="/webnovel/weekdayList" class="sub_link NPI=a:tod"><span class="sub_txt">오늘</span></a></li>
-                            <li class=""><a href="/webnovel/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
-
-                            <li class=""><a href="/webnovel/finish" class="sub_link NPI=a:end"><span class="sub_txt">완결</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="m4  ">
-                        <a href="/best/popular" class="lnb_link N=a:lnb.best"><span class="lnb_txt">베스트리그</span></a>
-
-                        <ul class="snb NE=a:tnb">
-                            <li class=""><a href="/best/popular" class="sub_link NPI=a:all"><span class="sub_txt">추천</span></a></li>
-                            <li class=""><a href="/best/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
-                            <li class=""><a href="/best/levelUp" class="sub_link NPI=a:new"><span class="sub_txt">신규 승격작</span></a></li>
-
-                        </ul>
-                    </li>
-                    <li class="m5  ">
-                        <a href="/challenge/popular" class="lnb_link N=a:lnb.challenge"><span class="lnb_txt">챌린지리그</span></a>
-
-                        <ul class="snb NE=a:tnb">
-                            <li class=""><a href="/challenge/popular" class="sub_link NPI=a:all"><span class="sub_txt">추천</span></a></li>
-                            <li class=""><a href="/challenge/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
-
-                        </ul>
-                    </li>
-                    <li class="m6 on sub">
-                        <a href="/my/recentNovelList" class="lnb_link N=a:lnb.my"><em class="line">|</em><span class="lnb_txt">MY</span></a>
-                        <span class="blind">(선택됨)</span>
-                        <ul class="snb NE=a:mnb">
-                            <li class=""><a href="/my/recentNovelList" class="sub_link NPI=a:recent"><span class="sub_txt">최근 본 작품</span></a></li>
-                            <li class=""><a href="/my/concernNovelList" class="sub_link NPI=a:favorate"><span class="sub_txt">관심작품</span></a></li>
-                            <li class=""><a href="/my/bookmarkList" class="sub_link NPI=a:bookmark"><span class="sub_txt">책갈피</span></a></li>
-                            <li class="on"><a href="/my/myNovelList" class="sub_link NPI=a:mynovel"><span class="sub_txt">내 작품</span></a><span class="blind">(선택됨)</span></li>
-
-                        </ul>
-                    </li>
-                    <li class="m7 "><a href="/my/volumeWrite" class="lnb_link N=a:lnb.write"><span class="lnb_txt">작품 올리기</span></a></li>
-                </ul>
-                <div class="genre_setting">
-                    <!--[D] 설정 전 : 클래스 추가 없음
-                        <a href="#" role="button" class="btn_genre">선호장르</a>
-                         설정 중 : 클래스 on 추가
-                         <a href="#" role="button" class="btn_genre on">선호장르</a>
-                        설정 후 : 클래스 save 추가, 대체텍스트 '설정됨' 추가
-                         <a href="#" role="button" class="btn_genre save">선호장르<span class="blind">설정됨</span></a>
-                     -->
-
-                    <a id="preferGenreSettingBtn" href="#" role="button" class="btn_genre _openPreferGenreSettingLayer save">
-                        선호장르<span class="blind">설정됨</span>
-                    </a>
-                    <!-- 선호장르 -->
-                    <!--[D] 노출 시 display:block으로 변경 -->
-                    <div id="preferGenreSettingLayer" class="ly_genre_setting" style="display: none">
-                        <p class="tit">선호장르 설정</p>
-                        <ul class="genre_list">
-                            <!--[D] 선택된 장르 li에 on클래스 추가해주세요 -->
-
-                            <li id="li_preferGenre101">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre101" class="blind _selectPreferGenre(101)" value="101">
-                                <label for="input_rdo_preferGenre101" class="lb_genre">로맨스</label>
-                            </li>
-
-                            <li id="li_preferGenre109">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre109" class="blind _selectPreferGenre(109)" value="109">
-                                <label for="input_rdo_preferGenre109" class="lb_genre">로판</label>
-                            </li>
-
-                            <li id="li_preferGenre102" class="on">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre102" class="blind _selectPreferGenre(102)" checked="checked" value="102">
-                                <label for="input_rdo_preferGenre102" class="lb_genre">판타지</label>
-                            </li>
-
-                            <li id="li_preferGenre110">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre110" class="blind _selectPreferGenre(110)" value="110">
-                                <label for="input_rdo_preferGenre110" class="lb_genre">현판</label>
-                            </li>
-
-                            <li id="li_preferGenre103">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre103" class="blind _selectPreferGenre(103)" value="103">
-                                <label for="input_rdo_preferGenre103" class="lb_genre">무협</label>
-                            </li>
-
-                            <li id="li_preferGenre000">
-                                <input type="radio" name="sl_genre" id="input_rdo_preferGenre000" class="blind _selectPreferGenre(000)" value="000">
-                                <label for="input_rdo_preferGenre000" class="lb_genre">설정안됨</label>
-                            </li>
-                        </ul>
-                        <p class="dsc">선호장르를 설정하시면 여러 장르가 혼합된 화면에서 원하는 장르 작품만 필터링하여 보실 수 있습니다.</p>
-                        <div class="btn_wrap">
-                            <a href="#" class="btn_reset _initPreferGenre">초기화</a>
-                            <a href="#" class="btn_save _savePreferGenreSetting">저장</a>
-                            <button class="btn_close _closePreferGenreSettingLayer"><span class="blind">닫기</span></button>
-                        </div>
-                        <!--[D] 토스트/딤드 1초 내외로 사라짐 -->
-                        <div id="preferGenreDim" class="dimmed" style="display: none;">
-                            <p id="preferGenreToast">설정이 초기화되었습니다.</p>
-                        </div>
-                    </div>
-                    <!-- //선호장르 -->
-                </div>
-            </div>
-            <!-- //menu -->
         </div>
     </div>
     <!-- //header -->
@@ -190,17 +40,6 @@
     <!-- container -->
     <div id="container" style="padding-top: 164px;">
         <!-- content -->
-
-
-
-
-
-
-
-
-
-
-
         <div id="content">
             <!-- write area -->
             <div class="write_area">
@@ -211,7 +50,6 @@
                     <p class="dsc_rule">
                         저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은 이용약관 및 관련 법률에 의하여 제재를 받을 수 있습니다.<br>
                         작품 및 회차 연재 시 운영원칙에 동의한 것으로 간주합니다. 성인물, 폭력물 등 운영원칙에 위배되는 작품은 통보 없이 삭제될 수 있습니다.
-                        <a href="/my/agreementPopup" target="_blank"><span class="txt">상세보기</span><em class="icon_arrow2"></em></a>
                     </p>
                     <form id="novelWriteForm" action="/my/novelSave" method="post">
                         <input type="hidden" name="type" value="add">
@@ -220,17 +58,12 @@
                         <input type="hidden" name="prevContestGenre" id="prevContestGenre" value="">
                         <input type="hidden" name="volumeWriteRedirectYn" id="volumeWriteRedirectYn" value="N">
                         <input type="hidden" name="prevGenreCode" id="prevGenreCode" value="">
-
-
-
-
                         <fieldset>
                             <legend>새 작품 쓰기</legend>
                             <ul class="write_form NE=a:new">
+                                    <h4>작품제목</h4>
 
                                 <li>
-
-                                    <h4 id="novelTitleDescription" class="sub_tit v2" style="display: block;">작품제목</h4>
                                     <input type="text" id="inputNovelTitle" name="novelTitle" class="input_txt" title="작품제목" value="" onkeydown="if(event.keyCode == 27) return false;">
                                 </li>
 
@@ -240,175 +73,61 @@
 
 
                                     <div id="genreSelect" class="select_list genre">
-                                        <em class="blind">장르별 분류 :</em>
-                                        <a id="genreLayerBtn" href="#" class="selected_item NPI=a:genre"><span id="selectedGenre" class="selected_item_txt">
-
-
-										장르선택
-
-									</span><span class="icon_select_arr"></span></a>
-                                        <ul id="genreLayer" class="select_item">
-
-                                            <li id="genreItem101">
-                                                <a href="#" class="_selectGenre(101, CHALLENGE)" id="genre101">로맨스</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="101">
-
-                                            <li id="genreItem109">
-                                                <a href="#" class="_selectGenre(109, CHALLENGE)" id="genre109">로판</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="109">
-
-                                            <li id="genreItem102">
-                                                <a href="#" class="_selectGenre(102, CHALLENGE)" id="genre102">판타지</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="102">
-
-                                            <li id="genreItem110">
-                                                <a href="#" class="_selectGenre(110, CHALLENGE)" id="genre110">현판</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="110">
-
-                                            <li id="genreItem103">
-                                                <a href="#" class="_selectGenre(103, CHALLENGE)" id="genre103">무협</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="103">
-
-                                            <li id="genreItem104">
-                                                <a href="#" class="_selectGenre(104, CHALLENGE)" id="genre104">미스터리</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="104">
-
-                                            <li id="genreItem106">
-                                                <a href="#" class="_selectGenre(106, CHALLENGE)" id="genre106">라이트노벨</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="106">
-
-                                            <li id="genreItem111">
-                                                <a href="#" class="_selectGenre(111, CHALLENGE)" id="genre111">자유장르</a>
-                                            </li>
-                                            <input type="hidden" class="_genre" value="111">
-
-                                        </ul>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="">장르선택</option>
+                                            <option value="로맨스">로맨스</option>
+                                            <option value="판타지">판타지</option>
+                                            <option value="무협">무협</option>
+                                            <option value="드라마">드라마</option>
+                                            <option value="SF">SF</option>
+                                            <option value="자유장르">자유장르</option>
+                                        </select>
                                     </div>
-
-                                    <span id="contestArea" class="chk_area contest" style="display:none">
-								<input type="checkbox" name="contestYn" id="contestYn" class="chk _checkContest(new)">
-                                        <!-- [D] 체크박스가 checked가 될경우 <label>엘리먼트에 on 클래스 추가 -->
-								<label for="contestYn" class="icon_chk3 "><span class="blind"></span></label>
-								<label for="contestYn" class="label_dsc">공모전 출품</label>
 							</span>
-
-                                    <input type="hidden" name="genreTypeCode" id="inputGenre" value="">
-
                                     <div class="right_box">
                                         <h4 class="sub_tit">연재 주기</h4>
-                                        <span class="chk_area">
-									<input type="radio" name="daywYn" id="daywN" class="chk NPI=a:free _changeDayw(N)" value="N" title="자유연재" checked="checked">
-
-									<label for="daywN" id="daywLabelN" class="icon_chk3 on"><span class="blind">check</span></label>
-									<label for="daywN" class="label_dsc">자유연재</label>
-								</span>
-                                        <span class="chk_area">
-									<input type="radio" name="daywYn" id="daywY" class="chk NPI=a:apt _changeDayw(Y)" value="Y" title="요일연재">
-
-									<label for="daywY" id="daywLabelY" class="icon_chk3 "><span class="blind">check</span></label>
-									<label for="daywY" class="label_dsc">요일연재</label>
-								</span>
-                                        <div class="day_slt">
-									<span>
-
-										<input type="checkbox" name="mondayYn" id="day1" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-
-
-										<label for="day1" class=" off">월</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="tuesdayYn" id="day2" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day2" class=" off">화</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="wednesdayYn" id="day3" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day3" class=" off">수</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="thursdayYn" id="day4" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day4" class=" off">목</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="fridayYn" id="day5" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day5" class=" off">금</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="saturdayYn" id="day6" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day6" class=" off">토</label>
-									</span>
-                                            <span>
-										<input type="checkbox" name="sundayYn" id="day7" class="_day_of_the_week NPI=a:aptd _selectDay()" disabled="">
-										<label for="day7" class=" off">일</label>
-									</span>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">월</label>
                                         </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">화</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox3">수</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox4">목</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox5">금</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox6">토</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox7">일</label>
+                                        </div>
+
                                     </div>
                                 </li>
 
-
-                                <li class="cover_area">
-                                    <h4 class="sub_tit v2">표지이미지</h4>
-                                    <ul class="lst_cover" id="coverImageList" style="display:none">
-
-                                    </ul>
-
-                                    <input type="hidden" name="coverImageUrl" id="coverImageUrl" value="">
-                                </li>
-
-
+                                    <h4>작품소개</h4>
                                 <li style="height:344px">
 
-                                    <h4 id="synopsisContentDescription" class="sub_tit v2" style="display: block;">작품 소개</h4>
                                     <textarea cols="30" rows="5" id="inputSynopsisContent" name="synopsisContent" class="txtarea" title="작품 소개" style="height:306px" onkeydown="if(event.keyCode == 27) return false;"></textarea>
                                 </li>
 
                                 <li>
-
                                     <h4 class="sub_tit">필명</h4>
-
-                                    <a id="nicknameInfoBtn" href="#" class="icon_qu" onclick="return false;">상세설명</a>
-                                    <span id="nicknameInfoLayer" class="ly_penname">이 작품에 사용할 필명을 선택하실 수 있습니다.<br>필명은 아이디 당 최대 5개까지 등록 가능하며,<br>사용 중인 작품이 없는 필명은 삭제 가능합니다.</span>
-                                    <div class="select_list">
-
-                                        <a id="nicknameListBtn" href="#" class="selected_item"><span id="selectedNickname" class="selected_item_txt">
-
-
-										사용하실 필명을 추가해 주세요.
-
-								</span><span class="icon_select_arr"></span></a>
-
-                                        <div id="nicknameListLayer" class="lst_penname NE=a:nck" style="display:none;">
-
-                                            <ul id="nicknameListUl"></ul>
-
-                                            <!-- paginate -->
-                                            <div id="nicknamePageLayer" class="paging2" style="display:none;"></div>
-
-                                            <div class="penname_add">
-
-                                                <button type="button" id="addNicknameBtn" class="but_penname_add NPI=a:new _displayAddNicknameForm(show)">필명추가</button>
-
-                                                <span id="nicknameAddLayer" style="display:none"><input type="text" id="inputNewAuthorNickname" title="필명" onkeydown="if(event.keyCode == 27) return false;"><button type="button" class="but_penname_ok NPI=a:add _registerNickname()">확인</button><button type="button" class="but_penname_cancel NPI=a:cancel _displayAddNicknameForm(hide)">취소</button></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="hidden" name="authorNickname" id="inputAuthorNickname" value="">
-
-
-                                    <div class="right_box v2">
-                                        <h4 class="sub_tit">작가 블로그</h4>
-                                        <span class="chk_area ">
-									<input type="checkbox" id="inputAuthorBlogExposure" name="authorBlogExposureYn" value="Y" class="chk _toggleAuthorBlogExposure(new)" title="연결하기">
-
-									<label for="inputAuthorBlogExposure" id="inputAuthorBlogExposureLabel" class="icon_chk3 "><span class="blind">check</span></label>
-									<label for="inputAuthorBlogExposure" class="label_dsc">연결하기<span>(blog.naver.com/scolpionsjk)</span></label>
-								</span>
+                                    <div class="select_list genre">
+                                        <input type="text" class="pil_txt">
                                     </div>
                                 </li>
 
@@ -417,311 +136,18 @@
 
                                 </li>
                             </ul>
-
-
                             <div class="bt_area NE=a:new">
                                 <button type="button" class="but_cancel NPI=a:cancel _cancelWrite()">취소</button>
                                 <button type="button" class="but_save NPI=a:save _saveNovel(N)">저장</button>
-
-                                <button type="button" class="but_savewrite NPI=a:saveandwrite _saveNovel(Y)">저장 후 1회 쓰기</button>
-
                             </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
         </div>
-
-
-        <div id="coverUploadDimLayer" class="ly_dim">
-            <div class="bg"></div>
-        </div>
-        <div id="coverUploadDimLayerForPreview" class="ly_dim" style="z-index:1010">
-            <div class="bg"></div>
-        </div>
-
-
-
-
-
-        <div id="coverImagePreview" class="ly_wrap2 fixed NE=a:new">
-            <div class="ly_box">
-                <div class="ly_cover_preview">
-                    <h3><span class="htxt_cover_preview">표지 이미지 미리보기</span></h3>
-                    <a id="coverImagePreviewCloseBtn" href="#" class="icon_close NPI=a:uclose">닫기</a>
-                    <div class="ly_cont_inner">
-                        <ul>
-                            <li>
-					<span class="img_area">
-						<img id="coverImagePreviewPcMob" src="" width="180" height="160" alt="">
-						<span class="mask"></span>
-					</span>
-                                <p class="dsc">PC/모바일버전 목록</p>
-                            </li>
-                            <li>
-					<span class="img_area">
-						<img id="coverImagePreviewMob" src="" width="137" height="160" alt="">
-						<span class="mask"></span>
-					</span>
-                                <p class="dsc">모바일버전 작품 페이지</p>
-                            </li>
-                            <li>
-					<span class="img_area">
-						<img id="coverImagePreviewPc" src="" width="232" height="160" alt="">
-						<span class="mask"></span>
-					</span>
-                                <p class="dsc">PC버전 작품 페이지</p>
-                            </li>
-                        </ul>
-                        <div class="bt_area">
-                            <div class="cover_upload">
-                                <div class="upload">
-                                    <!-- [D] 진도 파일업로드 버튼 -->
-                                    <div id="userCoverImageOnPreviewButton" class="browsebutton NPI=a:uupload"> <!-- 기준 엘리먼트 -->
-                                        <div class="browse-box"> <!-- box 엘리먼트 -->
-                                            <form method="POST" enctype="multipart/form-data">
-                                                <input class="browse-file-input" type="file" id="userCoverImageOnPreview" name="userCoverImageOnPreview" style="top: -0.5em !important; height: 500px !important; right: 0px;" title="다른 이미지 업로드"> <!-- File Input 엘리먼트 -->
-                                            </form>
-                                        </div>
-                                        <a class="browse-button browse-applied" onclick="return false;" href="#"><span class="but_otherimg_up">다른 이미지 업로드</span></a> <!-- 찾아보기 버튼 엘리먼트 -->
-                                    </div>
-                                    <div id="fileName2"></div> <!-- 파일 이름 엘리먼트 -->
-
-                                    <noscript> &lt;!-- 자바스크립트가 지원되지 않는 경우의 표현 --&gt;
-                                        &lt;style type="text/css"&gt;
-                                        .browsebutton {display:none;}
-                                        .browse-file-input {width:250px; height:21px; border:1px solid #999;}
-                                        &lt;/style&gt;
-                                        &lt;input class="browse-file-input" type="file" name="browse" /&gt;
-                                    </noscript>
-                                </div>
-                            </div>
-                            <button type="button" id="coverImagePreviewApplyBtn" class="but_coverimg_save NPI=a:usave">표지 이미지 저장하기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-
-
-
-
-
-        <div id="contestParticipationInfoLayer" class="ly_wrap2 fixed" style="display: none;">
-            <div class="ly_box">
-                <div class="ly_contest">
-                    <strong>공모전에 출품한 작품은,</strong>
-                    <ul>
-                        <li>자동승격 시스템에 의해 베스트리그로 승격될 수 있습니다.</li>
-                        <li>베스트리그 승격 여부는 공모전 심사에 영향을 주지 않습니다.</li>
-                        <li>심사 기간 중 베스트리그 유료 서비스를 신청하시면 공모전 심사에서 제외됩니다.</li>
-                    </ul>
-                    <div class="lk_wrap">
-                        <a class="lk_finish _closeContestParticipationInfoLayer(50)" href="#">다시 보지 않기</a>
-                        <a class="lk_close _closeContestParticipationInfoLayer(1)" href="#">1일간 보지 않기</a>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-
-        <!-- 공모전 출품 버튼 체크시 -->
-        <!--[D] 레이어 활성화 시 display: block 스타일 추가 -->
-        <div id="contestParticipationConfirmLayer" class="ly_wrap2 fixed" style="display: none;">
-            <div class="ly_box">
-                <div class="ly_contest_info">
-                    <strong>작품 등록과 동시에<br>공모전에 출품하시겠습니까?</strong>
-                    <p>출품을 원하지 않으실 경우<br>공모전 출품을 선택 해제한 후 다시 시도해주세요.</p>
-                    <div class="btn_wrap">
-                        <a class="btn_ok _closeContestParticipationConfirmLayer(save)" href="#">공모전 출품</a>
-                        <a class="btn_cancel _closeContestParticipationConfirmLayer" href="#">취소</a>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-        <!--// 공모전 출품 버튼 체크시 -->
-
-
-
-
-
-        <div id="contestNoParticipationConfirmLayer" class="ly_wrap2 fixed" style="display: none;">
-            <div class="ly_box">
-                <div class="ly_contest_info">
-                    <strong class="tit">작품을 등록하시겠습니까?</strong>
-                    <p>공모전에 출품을 원하실 경우<br>공모전 출품을 체크하신 후 다시 시도해주세요.</p>
-                    <div class="btn_wrap">
-                        <a class="btn_ok _closeContestNoParticipationConfirmLayer(save)" href="#">작품 등록</a>
-                        <a class="btn_cancel _closeContestNoParticipationConfirmLayer" href="#">취소</a>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-
-        <!-- 공모전 출품 취소 안내 -->
-        <!--[D] 레이어 활성화 시 display: block 스타일 추가 -->
-        <div id="contestCancelConfirmLayer" class="ly_wrap2 fixed" style="display: none;">
-            <div class="ly_box">
-                <div class="ly_contest_cancel">
-                    <strong>공모전 출품을 취소하고,<br>작품을 수정하시겠습니까?</strong>
-                    <p>‘공모전 출품’ 옵션이 해제되어 있습니다.<br><font color="red">출품 취소 시, 다시 응모하실 수 없습니다.</font></p>
-                    <div class="btn_wrap">
-                        <a class="btn_ok _closeContestCancelConfirmLayer(save)" href="#">확인</a>
-                        <a class="btn_cancel _closeContestCancelConfirmLayer" href="#">취소</a>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-        <!--// 공모전 출품 취소 안내-->
-
-
-        <div id="contestGenreChangeConfirmLayer" class="ly_wrap2 fixed" style="display: none;">
-            <div class="ly_box">
-                <div class="ly_contest_cancel">
-                    <strong>장르 변경 시 공모전<br>참가가 취소됩니다.<br>참가를 취소하시겠습니까?</strong>
-                    <div class="btn_wrap">
-                        <a class="btn_ok _closeContestGenreChangeConfirmLayer(save)" href="#">확인</a>
-                        <a class="btn_cancel _closeContestGenreChangeConfirmLayer" href="#">취소</a>
-                    </div>
-                </div>
-            </div>
-            <span class="ly_alignbox"></span>
-        </div>
-
-
-
-
-
-
-
     </div>
     <!-- //container -->
     <hr>
-    <!-- footer -->
-
-
-
-
-    <div id="footer" class="dtl">
-        <!-- 선호장르 -->
-        <div class="foot_genre_wrap">
-            <div class="inner">
-                <div class="foot_genre">
-                    <!--[D] 설정 전 : 클래스 추가 없음
-                        <button type="button" class="btn_genre">선호 장르</button>
-                         설정 중 : 클래스 on 추가
-                         <button type="button" class="btn_genre on">선호장르</button>
-                        설정 후 : 클래스 save 추가, 대체텍스트 '설정됨' 추가
-                         <button type="button" class="btn_genre save">선호장르<span class="blind">설정됨</span></button>
-                     -->
-
-                    <button id="preferGenreSettingFooterBtn" type="button" class="btn_genre _openPreferGenreSettingFooterLayer save">
-                        선호장르<span class="blind">설정됨</span>
-                    </button>
-
-                    <!--[D] 미노출시 display:none 으로 변경 -->
-                    <div id="preferGenreTooltip" class="ly_genre_info" style="display: block;">
-
-
-
-
-
-                        선호장르가 <strong>'판타지'</strong>로 설정되어있어요!
-
-
-
-
-
-                        <button type="button" class="btn_close _closePreferGenreTooltip"><span class="blind">닫기</span></button>
-                    </div>
-                    <!-- 선호장르 -->
-                    <!--[D] 노출 시 display:block으로 변경 -->
-                    <div id="preferGenreSettingFooterLayer" class="ly_genre_setting" style="display: none">
-                        <p class="tit">선호장르 설정</p>
-                        <ul class="genre_list">
-                            <!--[D] 선택된 장르 li에 on클래스 추가해주세요 -->
-
-                            <li id="fot_li_preferGenre101">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre101" class="blind _selectPreferGenre(101,footer)" value="101">
-                                <label for="fot_input_rdo_preferGenre101" class="lb_genre">로맨스</label>
-                            </li>
-
-                            <li id="fot_li_preferGenre109">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre109" class="blind _selectPreferGenre(109,footer)" value="109">
-                                <label for="fot_input_rdo_preferGenre109" class="lb_genre">로판</label>
-                            </li>
-
-                            <li id="fot_li_preferGenre102" class="on">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre102" class="blind _selectPreferGenre(102,footer)" checked="checked" value="102">
-                                <label for="fot_input_rdo_preferGenre102" class="lb_genre">판타지</label>
-                            </li>
-
-                            <li id="fot_li_preferGenre110">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre110" class="blind _selectPreferGenre(110,footer)" value="110">
-                                <label for="fot_input_rdo_preferGenre110" class="lb_genre">현판</label>
-                            </li>
-
-                            <li id="fot_li_preferGenre103">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre103" class="blind _selectPreferGenre(103,footer)" value="103">
-                                <label for="fot_input_rdo_preferGenre103" class="lb_genre">무협</label>
-                            </li>
-
-                            <li id="fot_li_preferGenre000">
-                                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre000" class="blind _selectPreferGenre(000,footer)" value="000">
-                                <label for="fot_input_rdo_preferGenre000" class="lb_genre">설정안됨</label>
-                            </li>
-                        </ul>
-                        <p class="dsc">선호장르를 설정하시면 여러 장르가 혼합된 화면에서 원하는 장르 작품만 필터링하여 보실 수 있습니다.</p>
-                        <div class="btn_wrap">
-                            <a href="#" class="btn_reset _initPreferGenre(footer)">초기화</a>
-                            <a href="#" class="btn_save _savePreferGenreSetting(footer)">저장</a>
-                            <button type="button" class="btn_close _closePreferGenreSettingFooterLayer"><span class="blind">닫기</span></button>
-                        </div>
-                        <!--[D] 토스트/딤드 1초 내외로 사라짐 -->
-                        <div id="fot_preferGenreDim" class="dimmed" style="display: none;">
-                            <p id="fot_preferGenreToast">설정이 초기화되었습니다.</p>
-                        </div>
-                    </div>
-                    <!-- //선호장르 -->
-                </div>
-            </div>
-        </div>
-        <!-- //선호장르 -->
-
-        <!-- 공지사항 -->
-        <div class="foot_notice NE=a:fot">
-            <div class="inner">
-
-                <h4 class="notice"><a href="/notice" class="link NPI=a:notice">공지사항</a></h4>
-
-                <a href="/notice?docId=10000000000030672768" title="베스트리그 > 오늘의 웹소설 슈퍼패스 승격작 안내[22nd]" class="notice_dsc NPI=a:notilst,r:1">베스트리그 &gt; 오늘의 웹소설 슈퍼패스 승격작 안내[22nd]</a>
-
-
-
-                <ul class="webtoon_link_list">
-                    <li class="webtoon"><a href="https://comic.naver.com/" class="link NPI=a:webtoonweb">웹툰</a></li>
-                    <li class="webnovel"><a href="/" class="link NPI=a:novel">웹소설</a></li>
-                    <li class="series"><a href="https://series.naver.com/novel/home.nhn" class="link NPI=a:series">시리즈 소설·만화</a></li>
-                    <li class="serieson"><a href="https://serieson.naver.com/" class="link NPI=a:serieson">시리즈온 영화·방송</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="ly_dim" id="ly_dim">
-        <div class="bg"></div>
-    </div>
-
-
-    <div id="ly_favorite_toast" class="ly_favorite_toast" style="display: none;">
-        <p id="ly_favorite_toast_txt">관심작품 목록에 추가하였습니다.</p>
-    </div>
-
-    <!-- //footer -->
 </div>
 </body>
 </html>

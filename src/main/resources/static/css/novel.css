@@ -2206,8 +2206,13 @@ iframe {
 	text-decoration: none;
 }
 
-.header_inner h1 .h_txt_naver {
+.header_inner h1  {
 	margin-top: 25px;
+}
+
+.h_txt_naver2 {
+    margin-top: 70px;
+
 }
 
 .header_inner h1 .h_txt_novel {
@@ -8225,10 +8230,11 @@ iframe {
 .write_form .sub_tit {
 	display: inline-block;
 	*display: inline;
-	font-size: 15px;
+	font-size: 20px;
 	line-height: 54px;
 	vertical-align: top;
 	zoom: 1;
+	font-weight:bold;
 }
 
 .write_form .sub_tit.v2 {
@@ -11679,4 +11685,8 @@ iframe {
 	font-size: 16px;
 	line-height: 18px;
 	color: #9fa6b0;
+}
+
+.pil_txt {
+    height:35px;
 }
