@@ -1,13 +1,13 @@
 package NERDPRESS.NERDPRESS.domain;
 
 public class Member {
-    private int id;
-    private String userId;
-    private String PW;
-    private String name;
-    private boolean male;
-    private int birthDate;
-    private byte grade;
+    private int id;//1
+    private String userId;//2
+    private String PW;//3
+    private String name;//4
+    private boolean male;//5
+    private int birthDate;//6
+    private byte grade;//7
 
     public int getId() {
         return id;
