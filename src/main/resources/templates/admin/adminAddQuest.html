@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>administrator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="../../static/css/td_nth_child.css" rel="stylesheet">
+    <script src="../../static/js/addQuest.js"></script>
+</head>
+
+
+<body>
+<!-- 부트스트랩 자바스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+<!-- 페이지 전체 컨테이너 -->
+<div class="container">
+
+    <!-- 상단 페이지 로고 -->
+    <div class="row">
+        <a href="/static/index.html">
+            <div class="col">
+                <h1>NERDPRESS</h1>
+            </div>
+        </a>
+    </div>
+
+    <!-- 각 페이지로 넘어가기 -->
+    <div class="row">
+        <ul class="nav justify-content-around">
+            <li class="nav-item leftSide ">
+                <a class="nav-link active text-secondary" aria-current="page" href="adminIDManage.html">회원관리</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="adminWriterManage.html">작가관리</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="adminNovelManage.html">소설관리</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="adminAddQuest.html">자격증 문제 등록</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">자격증 문제 보기</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">신고내역 조회</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <table class="table table-sm">
+            <form id="addQuizForm" method="post" action="#">
+                <tr>
+                    <td>문제 ID</td>
+                    <td colspan="2">
+                        <input type="text" id="Quest_id" name="Quest_id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>자격증 종류</td>
+                    <td>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="License_id">
+                            <option value="" selected>선택</option>
+                            <option value="0">정보 처리 기사</option>
+                            <option value="1">정보 보안 기사</option>
+                            <option value="2">데이터베이스 관리사</option>
+                            <!--
+                                자격증을 추가 시 이쪽에서 보이도록
+                                DB SELECT
+                            -->
+                        </select>
+                        <button type="button" class="btn btn-warning" onclick="location.href='adminAddLicense.html';">
+                            자격증 추가
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>문제 설명</td>
+                    <td>
+                        <input type="text" id="Quest_title" name="Quest_title" size="100" style="height: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>정답 보기</td>
+                    <td>
+                        <div>
+                            <span>1</span>
+                            <input type="text" id="Q_one" name="Q_one">
+                        </div>
+                        <div>
+                            <span>2</span>
+                            <input type="text" id="Q_two" name="Q_two">
+                        </div>
+                        <div>
+                            <span>3</span>
+                            <input type="text" id="Q_three" name="Q_three">
+                        </div>
+                        <div>
+                            <span>4</span>
+                            <input type="text" id="Q_four" name="Q_four">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>정답 번호</td>
+                    <td>
+                        <input type="text" id="Quest_answer" name="Quest_answer">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" class="btn btn-outline-warning" onclick="location.href='#'">취소</button>
+                        <button type="button" class="btn btn-outline-warning" onclick="addQuestCheck()">문제 추가하기</button>
+                        <!--
+                            문제 추가하기 버튼 클릭 시 QuestList(문제 리스트) 테이블에 INSERT
+                        -->
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </div>
+
+
+    <div>
+        <footer>
+            <nav>
+                <a href='https://cocoder.tistory.com' target='_blank'>blog</a>
+                <a href='https://github.com/dwc0213/NERDPRESS.git' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>팀</span><br/>
+                <span>이메일 : jin5myung@naver.com</span><br/>
+                <span>Copyright 2022. bootstrap. All Rights Reserved.</span>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
