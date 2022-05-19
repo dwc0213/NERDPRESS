@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>마이페이지
+		</title>
+	</head>
+	<style>
+		*{
+			margin : 0;
+			padding : 0;
+		}
+		.flexContainer{
+			width : 1200px;
+			margin : 0 auto;
+			display : flex;
+			flex-direction : column;
+		}
+		.header{
+			width : 100%;
+			border : 1px solid black;
+		}
+		h1{
+			padding : 15px 0px;
+		}
+		nav{
+			width : 100%;
+			border : 1px; solid black;
+		}
+		ul{
+			list-style-type : none;
+			display : flex;
+			flex-direction : row;
+		}
+		li{
+			width : 300px;
+		}
+		.li{
+			display : flex;
+			flex-direction : wrap;
+			height : 25%;
+		}
+		a{
+			display : inline-block;
+			width : 100%;
+			padding : 20px 0px;
+			text-align : center;
+			box-sizing : border-box;
+			border : 1px solid black;
+		}
+		.a{
+			border : 0px solid black;
+		}
+		.mainContainer{
+			display : flex;
+			width : 1200px;
+			flex-direction : row;
+		}
+		section{
+			width : 238px;
+			height : 700px;
+			border : 1px solid black;
+			display : flex;
+			flex-direction : row;
+			flex-wrap : wrap;
+			padding : 20px 0px;
+		}
+		h3{
+			width : 100%;
+			padding : 10px 0px;
+		}
+		article{
+			width : 100%;
+			border : 1px solid black;
+			box-sizing : border-box;
+		}
+		.logo{
+			width : 200px;
+			height : 100px;
+			border : 1px solid black;
+		}
+		.logo{
+			width : 300px;
+			height : 100px;
+			border : 1px solid black;
+		}
+		footer{
+			display : flex;
+			flex-direction : row;
+			border : 1px solid black;
+			justify-content : space-between;
+			padding : 20px 0px;
+		}
+	</style>
+	<body>
+		<hr>
+		<div class="flexContainer">
+			<header>
+				<h1>마이페이지</h1>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="#">menu1</a></li>
+					<li><a href="#">menu2</a></li>
+					<li><a href="#">menu3</a></li>
+					<li><a href="#">menu4</a></li>
+					<li><a href="#">menu5</a></li>
+				</ul>
+			</nav>
+			<div class="mainContainer">
+				<section>
+					<li class="li"><a href="" class="a">개인정보수정</a></li>
+						<li class="li"><a href="" class="a">비밀번호변경</a></li>
+					<li class="li"><a class="a">
+						<script>
+							target.addEventListener('click', onceHandler, once);
+							function onceHandler(event) {
+							alert('outer, once');
+							}
+						</script>
+					
+					
+					
+					
+					
+					포인트샵</a>
+						<li><a class="a">포인트 및 문제 관리</a></li>
+						<li><a class="a">포인트 획득 문제 풀기</a></li>
+						<li><a class="a">포인트 상점</a></li>
+					</li>
+					<li class="li"><a href="" class="a">책갈피</a>
+						<li><a class="a">장바구니</a></li>
+						<li><a class="a">나의 서재</a></li>
+					</li>
+				</section>
+				<article>
+				</article>
+			</div>
+			<footer>
+			</footer>
+		</div>
+	</body>
+</html>
