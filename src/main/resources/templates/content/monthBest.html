@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월간베스트</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/resources/static/css/everyPage.css">
+  <style>
+  </style>
+</head>
+
+
+<body>
+<!-- 부트스트랩 자바스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+<!-- 전체 컨테이너 -->
+<div class="container">
+
+  <!-- 상단 페이지 로고 -->
+  <div class="row">
+    <a href="/static/index.html">
+      <div class="col">
+        <h1>NERDPRESS</h1>
+      </div>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+              aria-controls="offcanvasScrolling"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEX///8jHyAgHB0ZExUdGBpqaGlMSUr8/Pz29fUnIyMAAAATDQ8/PD0cFxgIAAAhHR7r6+sMAAWDgoKenZ2pqKhRT0+8u7tmZGRGQ0SWlZXi4uIVDxDc29vQz88tKSo2MzRZVlf4dPTlAAAB8UlEQVR4nO3d7XKCMBCF4SAilIAKiPhZvf+rrDr2p5VmnUmyvM8V5MxqYyQ9GgMAAAAAAAAAAAAAAAAAAAAAAID/KbZtFqp2W8gDdklp01DZMumkA+zLWRKyWdmLxpj31neEt2yfCxLuS9/rH6HcuwcsYgh4i+j+Ot0sfS9+lOXGOeGQ+l78KOngnHA39734UeY754RV2DvFr1nlnlD9DK+178WPUl+dE+7D3+/vGvcN8RDJfnhwTmiyGIZoM/eAZp2E/06sk7UgoTklR98J3jgmJ0nA2xSH0tazUNW2HEQTfDi3i++vMH0v2rM4311ehEpyMgQAAAAAAAAAQKU8VJ+Jd+iyfhGmPusEj3+f8tYu03mo0qVthYNcX5qV72egf1o1F9EDxOIS/r2v9CK5YNo2vtc/QtO6B1xHctvE/XXaxTDC2xDd73rrv/XF7ctACG5f6p+h/veh/r+l+vdD/Z9pTFFF8Lm0Ev3jk/qzxfN8WPs+B75Qf+B8aPSf8R98fx3z0mfiAQAAAAAAAACgh/ZOBe29GOq7TSLop1mJ+mn0dwwNUfREuZcKTqDrK5K+Nuve16b/1pf+3kRuXwZCMEP9HbT6e4T1d0Hr7/OeQCe7/l59o/+3EcwEft8CAAAAAAAAAAAAAAAAAAAAAABgYn4AQj5jKu2LT8EAAAAASUVORK5CYII=" style="width:40px; height:auto;"></button>
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+           id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">이 페이지를 사용하려면 먼저 로그인하세요</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p><a href="/resources/template/login/login.html">로그인</a></p>
+          <p><a href="/resources/template/login/singUp.html">회원가입하기</a></p>
+          <p><a href="#">마이페이지로 이동</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 좌상단 메뉴 3개 -->
+  <div class="row">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/static/index.html">홈으로</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="SearchNovel.html">웹소설 검색</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="WriterList.html">작가리스트</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <h4>이번달 가장 핫한 작품</h4>
+    </div>
+  </div>
+
+
+
+  <!-- 소설 테이블 -->
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">top</th>
+        <th scope="col">제목</th>
+        <th scope="col">작가</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><a href="content.html">오늘도 웹소설</a></td>
+        <td><a href="WriterInformation.html">김송아</a></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>코딩은 어려워</td>
+        <td>송송아</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>코디도 어려워</td>
+        <td>파송송</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">16</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">17</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">18</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">19</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row">20</th>
+        <td>Jacob</td>
+        <td>dd</td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td><a href="">이전 페이지</a></td>
+        <td><a href="">다음 페이지</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+
+  </div>
+
+</div>
+
+<div>
+  <footer>
+    <nav>
+      <a href='https://cocoder.tistory.com' target='_blank'>blog</a> |
+      <a href='https://github.com/dwc0213/NERDPRESS.git' target='_blank'>Github</a>
+    </nav>
+    <p>
+      <span>팀</span><br />
+      <span>이메일 : jin5myung@naver.com</span><br />
+      <span>Copyright 2022. bootstrap. All Rights Reserved.</span>
+    </p>
+  </footer>
+</div>
+</body>
+
+</html>

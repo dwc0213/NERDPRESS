@@ -37,7 +37,7 @@
 <!-- 상단 페이지 로고 -->
 <div class="container">
     <div class="row">
-        <a href="/static/index.html">
+        <a href="/mainpage">
             <div class="col">
                 <h1>NERDPRESS</h1>
             </div>
@@ -56,8 +56,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <p><a href="/resources/template/login/login.html">로그인</a></p>
-                    <p><a href="/resources/template/login/singUp.html">회원가입하기</a></p>
+                    <p><a href="/login">로그인</a></p>
+                    <p><a href="/signup">회원가입하기</a></p>
                     <p><a href="#">마이페이지로 이동</a></p>
                 </div>
             </div>
@@ -66,30 +66,26 @@
 
 
     <!-- 검색창 -->
-    <div>
-        <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">검색</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/templates/content/SearchNovel.html">웹소설 검색</a></li>
-                <li><a class="dropdown-item" href="/templates/content/WriterList.html">작가검색</a></li>
-            </ul>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
-        </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">검색</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/searchnovel">웹소설 검색</a></li>
+            <li><a class="dropdown-item" href="/writerlist">작가검색</a></li>
+        </ul>
     </div>
 
     <!-- 웹페이지들로 넘어가기 -->
     <div>
         <ul class="nav justify-content-around">
             <li class="nav-item leftSide ">
-                <a class="nav-link active text-secondary" aria-current="page" href="">월간베스트</a>
+                <a class="nav-link active text-secondary" aria-current="page" href="monthbest">월간베스트</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">최신순 웹소설 목록</a>
+                <a class="nav-link text-secondary" href="/newest">최신순 웹소설 목록</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="/templates/content/WriterList.html">작가목록</a>
+                <a class="nav-link text-secondary" href="/writerlist">작가목록</a>
             </li>
         </ul>
     </div>
@@ -151,9 +147,9 @@
             <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td><a href="writerinfo">김송아</a></td>
+                <td>오늘도 웹소설</td>
+                <td>코믹, 가족</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
