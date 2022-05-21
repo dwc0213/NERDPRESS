@@ -1,48 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>글쓰기</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- include libraries(jQuery, bootstrap) -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-    <!-- include summernote css/js -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <meta charset="UTF-8">
+    <title>연재등록: NERDPRESS</title>
+    <link rel="stylesheet" href="../../static/css/episode.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-<form action="/write_action" method="POST">
-    <div class="form-group">
-        <label for="title">제목:</label>
-        <input type="text" class="form-control" id="title" name="title">
+<div id="wrap" class="">
+    <!-- header -->
+    <div id="header" class="fixed" style="transform: translateY(0px); transition-duration: 300ms;">
+        <input type="hidden" id="encryptedIdNo" name="encryptedIdNo" value="1GsPBS">
+        <input type="hidden" id="preferGenreType" value="102">
+        <input type="hidden" id="preferGenreTypeChange" value="false">
+        <div class="header_inner">
+            <!-- GNB -->
+            <div class="sta" id="gnb_height">
+                <h1>
+                    <a href="" title="NERD PRESS" class=""h_txt_naver2>NERD PRESS</a>
+                </h1>
+            </div>
+        </div>
     </div>
-    <div id="summernote"  class="click2edit" ><p> 이렇게 하면 됩니다 </p></div>
+    <!-- //header -->
+    <hr>
+    <!-- container -->
+    <div id="container" style="padding-top: 164px;">
+        <!-- content -->
+        <div id="content" class="">
+            <!-- write_area -->
+            <div class="write_area">
+                <div class="header_area">
+                    <h2 class="htxt_write_notice">"회차/공지 쓰기</h2>
+                </div>
+                <div class="write_cont">
+                    <h3 class="work_tit">끝난연애일까</h3>
+                    <form id="writeForm" action="/my/volumeSave" method="post">
+                        <input type="hidden" name="type" id="type" value="add">
+                        <input type="hidden" name="novelId" id="novelId" value="1058368">
+                        <input type="hidden" name="novelStatusCode" id="novelStatusCode" value="N">
+                        <input type="hidden" name="volumeNo" id="volumeNo" value="">
+                        <input type="hidden" name="noticeYn" id="noticeYn" value="N">
+                        <input type="hidden" name="noticeType" id="noticeType" value="">
+                        <input type="hidden" name="seq" id="seq" value="0">
+                        <fieldset>
+                            <legend>회차/공지 쓰기</legend>
+                            <ul class="write_form NE=a:edt">
+                                <li>
+                                    <h4>제목</h4>
+                                    <input type="text" id="inputVolumeTitle" name="volumeTitle" value="" class="input_txt" title="제목" onkeydown="if(event.keyCode == 27 || event.keyCode == 13) return false;">
+                                </li>
+                                <li class="auto">
+                                    <!-- 작품 내용 -->
+                                    <h4>내용</h4>
+                                    <div class="del_lf_space">
+                                        <span class="m_line"></span>
+                                        <textarea cols="30" rows="5" id="inputContent" name="content" class="txtarea" title="내용" onkeydown="if(event.keyCode == 27) return false;"></textarea>
+                                    </div>
 
-    <button type="submit" class="btn btn-success">등록하기</button>
-</form>
-
-</style>
-
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            tabsize: 2,
-            height: 300,
-            lang: 'ko-KR' // 언어 세팅
-        });
-    });
-  </script>
+                                </li>
+                                <li style="height:130px">
+                                    <!-- 작가의 말 -->
+                                    <h4>작가의 말</h4>
+                                    <textarea cols="30" rows="5" id="inputAuthorTalk" name="authorTalkContent" class="txtarea" style="height:92px" title="작가의 말" onkeydown="if(event.keyCode == 27) return false;"></textarea>
+                                </li>
+                                <li class="setting_area">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            완결(작품페이지에 완결로 노출됩니다.)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            운영원칙에 동의합니다
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="bt_area v2 NE=a:edt">
+                                <button type="button" class="but_cancel2 NPI=a:cancel _cancelWriteBtn(add,1058368)">취소</button>
+                                <button type="button" class="but_tempsave2 NPI=a:save _tempSavingBtn(direct)">임시저장</button>
+                                <button type="button" class="but_regist NPI=a:submit _saveVolume()">등록</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <span id="tempSaveLayer" class="ly_tmpsaving" style="display:none">임시 저장중 입니다.</span>
+                </div>
+            </div>
+        </div>
+        <!-- 임시 저장글 목록 -->
+        <div id="tempSavingListLayer" class="ly_wrap2 fixed" style="display:none">
+            <div class="ly_box">
+                <div class="ly_tempsave_word NE=a:tmp">
+                    <h3><span class="htxt_tempsave_word">임시저장글</span></h3>
+                    <a href="#" class="icon_close NPI=a:close _hideTempSavingList()">닫기</a>
+                    <div class="ly_cont_inner">
+                        <p class="guide_txt">작성중인 글은 3분마다 자동저장되며, 각 작품별로 최대 10개까지 저장됩니다.</p>
+                        <ul id="tempSavingListBody"></ul>
+                    </div>
+                </div>
+            </div>
+            <span class="ly_alignbox"></span>
+        </div>
+    </div>
+    <!-- //container -->
+    <hr>
 </div>
 </body>
-
 </html>
