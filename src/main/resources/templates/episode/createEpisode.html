@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>글쓰기</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+</head>
+
+<body>
+
+<form action="/write_action" method="POST">
+    <div class="form-group">
+        <label for="title">제목:</label>
+        <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div id="summernote"  class="click2edit" ><p> 이렇게 하면 됩니다 </p></div>
+
+    <button type="submit" class="btn btn-success">등록하기</button>
+</form>
+
+</style>
+
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            tabsize: 2,
+            height: 300,
+            lang: 'ko-KR' // 언어 세팅
+        });
+    });
+  </script>
+</div>
+</body>
+
+</html>

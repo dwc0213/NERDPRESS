@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../../static/css/listNovel.css">
+</head>
+<body>
+<div id="wrap" class="nobg">
+  <!-- 스킵네비게이션 -->
+  <div id="u_skip">
+    <a href="#lnb"><span>메인 메뉴로 바로가기</span></a>
+    <a href="#content" onclick="document.getElementById('content').tabIndex=-1;document.getElementById('content').focus();return false;"><span>본문으로 바로가기</span></a>
+  </div>
+  <!-- //스킵네비게이션 -->
+
+  <!-- header -->
+  <div id="header" class="fixed" style="transform: translateY(0px); transition-duration: 300ms;">
+    <input type="hidden" id="encryptedIdNo" name="encryptedIdNo" value="1GsPBS">
+    <input type="hidden" id="preferGenreType" value="102">
+    <input type="hidden" id="preferGenreTypeChange" value="false">
+    <div class="header_inner">
+      <!-- GNB -->
+
+
+      <div class="sta" id="gnb_height">
+        <h1>
+          <a href="http://www.naver.com/" title="NAVER" class="h_txt_naver N=a:STA.naverlogo">NAVER</a>
+          <a href="/" title="웹소설" class="h_txt_novel N=a:STA.novel">웹소설</a> <span class="line">|</span>
+          <a href="http://series.naver.com/novel/home.nhn" title="시리즈" class="h_txt_series N=a:STA.series">시리즈</a><span class="line">|</span>
+          <a href="https://comic.naver.com/" title="웹툰" class="h_txt_comic N=a:STA.webtoon">웹툰</a>
+        </h1>
+        <style>
+        .gnb_lst {
+            display: block !important;
+        }
+    </style>
+        <div id="gnb" class=""><strong class="blind">사용자 링크</strong><ul class="gnb_lst" id="gnb_lst" style="display: block;"><li class="gnb_login_li" id="gnb_login_layer" style="display: none;"><a class="gnb_btn_login" href="https://nid.naver.com/nidlogin.login" id="gnb_login_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">로그인</span></a></li><li class="gnb_my_li" id="gnb_my_layer" style="display: inline-block;"><div class="gnb_my_namebox" id="gnb_my_namebox" style="background-image: url(&quot;https://ssl.pstatic.net/static/common/gnb/2014/ico_arrow_bl1.gif&quot;);"><a href="javascript:;" class="gnb_my" onclick="gnbUserLayer.clickToggle(); return false;"><img id="gnb_profile_img" src="https://ssl.pstatic.net/static/common/myarea/myInfo.gif" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF8PDw5ubm+vr6+/v76enp+Pj47e3t5+fn9/f37Ozs9PT08vLy7+/v6urq9fX15OTk/f39pqwodgAAAQNJREFUeNrs11EOgyAMgOEWUAF19f6n3cMeplJHoSZbsv4H+DIWaCNsNwcGGmiggQZ+D/Q5reuasr8H9ID0CsHfALpA74JTgwPSPnRK0Ac6FrwOXOjcogIdlTkNuDDgogGRAVEBDsQ19IMzC879ILAgGNgAZhbMP3RttonxJs1Lgea/sDYcyreHXjW+oPUHVid2MWC1K+A0sqsDW7CksGmlCNZoFt9pIfjYgY8bwMMexUENQuOtqYCxfHtT7AddYodDcp0gIPEh9IBxous+nBuaTis4Nw/OSLVwloN+JEmjGJR5FyIDRpIWZeAoBkcZGMRgkIEkz0D7GjXQQAMN/GvwKcAAEGGHJh0mmaAAAAAASUVORK5CYII='" width="26" height="26" alt="내 프로필 이미지" style="display: inline-block;"><span id="gnb_profile_filter_mask" class="filter_mask" style="display: inline-block;"></span> <span class="gnb_name" id="gnb_name1">배민족</span><em class="blind">내정보 보기</em><span class="ico_arrow"></span></a><a href="#" class="gnb_emp" id="gnb_emp" style="display: none;">(임직원혜택)</a></div><div class="gnb_my_lyr" id="gnb_my_lyr"><div class="gnb_my_content"><div class="gnb_img_area"><span class="gnb_mask"></span><img src="https://ssl.pstatic.net/static/common/myarea/myInfo.gif" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF8PDw5ubm+vr6+/v76enp+Pj47e3t5+fn9/f37Ozs9PT08vLy7+/v6urq9fX15OTk/f39pqwodgAAAQNJREFUeNrs11EOgyAMgOEWUAF19f6n3cMeplJHoSZbsv4H+DIWaCNsNwcGGmiggQZ+D/Q5reuasr8H9ID0CsHfALpA74JTgwPSPnRK0Ac6FrwOXOjcogIdlTkNuDDgogGRAVEBDsQ19IMzC879ILAgGNgAZhbMP3RttonxJs1Lgea/sDYcyreHXjW+oPUHVid2MWC1K+A0sqsDW7CksGmlCNZoFt9pIfjYgY8bwMMexUENQuOtqYCxfHtT7AddYodDcp0gIPEh9IBxous+nBuaTis4Nw/OSLVwloN+JEmjGJR5FyIDRpIWZeAoBkcZGMRgkIEkz0D7GjXQQAMN/GvwKcAAEGGHJh0mmaAAAAAASUVORK5CYII='" width="80" height="80" alt="프로필 이미지"><a href="https://nid.naver.com/user2/api/naverProfile?m=checkIdType" class="gnb_change"><span class="blind">프로필 사진 변경</span></a></div><div class="gnb_txt_area"><p class="gnb_account"><span class="gnb_name" id="gnb_name2"><a class="gnb_nick" href="https://nid.naver.com/user2/api/naverProfile?m=checkIdType">배민족</a>님</span><a class="gnb_btn_login" href="https://nid.naver.com/nidlogin.logout?returl=https%3A%2F%2Fnovel.naver.com%2Fmy%2FmyNovelList" id="gnb_logout_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">로그아웃</span></a></p><a href="https://mail.naver.com" class="gnb_mail_address">scolpionsjk@naver.com</a><ul class="gnb_edit_lst"><li class="gnb_info"><a href="https://nid.naver.com/user2/help/myInfo?menu=home">네이버ID</a></li><li class="gnb_secure" id="gnb_secure_lnk"><a href="https://nid.naver.com/user2/help/myInfo?m=viewSecurity&amp;menu=security">보안설정</a></li><li class="gnb_cert" id="gnb_cert_lnk"><a href="https://nid.naver.com/user2/eSign/v1/home/land">내인증서</a></li></ul><div class="gnb_pay_check" id="gnb_pay_check"><p class="gnb_membership" style="display: none;" id="gnb_membership"><a href="https://nid.naver.com/membership/my" class="gnb_my_membership"><i class="blind">네이버 멤버쉽</i></a></p><em>N Pay</em><a href="https://pay.naver.com" id="gnb_pay_point"><span style="display: none">내 페이포인트</span></a></div></div></div><div class="gnb_my_community"><a href="https://blog.naver.com/MyBlog.naver" class="gnb_blog">내 블로그</a><a href="https://section.cafe.naver.com" class="gnb_cafe">가입한 카페</a><a href="https://pay.naver.com" class="gnb_pay"><span>N Pay</span></a></div><a href="#" class="gnb_my_interface" style="display:none"><span class="blind">환경설정</span></a></div><iframe id="gnb_my_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top:34px;right:-4px;width:320px;height:158px;display:none;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li><li class="gnb_notice_li" id="gnb_notice_layer" style="display: inline-block;"><a href="javascript:;" class="gnb_notice" onclick="gnbNaverMeLayer.clickToggle(); return false;"><span class="blind">알림</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_me_menu" style="display:none"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_me_count" style="display: inline-block;"></span></span></em><span class="ico_arrow"></span></a><div class="gnb_notice_lyr" id="gnb_notice_lyr"><div class="svc_noti svc_panel"><div class="svc_scroll"><div class="svc_head"><strong class="gnb_tit">전체 알림</strong><div class="task_right"><button onclick="gnbNaverMeLayer.deleteReadList(this, event);" id="gnb_btn_read_noti_del">읽은 알림 삭제</button><button onclick="gnbNaverMeLayer.showDeleteAlert();" id="gnb_btn_all_noti_del">모두 삭제</button></div></div><div class="svc_body" id="gnb_naverme_layer"></div></div><div class="gnb_ly_alert" id="gnb_ly_alert" style="display: none;"><p class="gnb_msg"><strong>알림을 모두 삭제하시겠습니까?</strong></p><div class="gnb_btns"><button id="ly_alert_confirm" onclick="gnbNaverMeLayer.deleteAllList(this, event);">확인</button><button onclick="gnbNaverMeLayer.hideDeleteAlert();">취소</button></div><button class="gnb_btn_close" onclick="gnbNaverMeLayer.hideDeleteAlert();"><i>레이어 닫기</i></button></div><a href="https://noti.naver.com/index.nhn" class="gnb_notice_all">내 알림 전체보기</a></div></div><iframe id="gnb_notice_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top:34px;right:-4px;width:299px;height:332px;display:none;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li><li class="mail_li" id="gnb_mail_layer" style="display: inline-block;"><a href="https://mail.naver.com" class="gnb_mail"><span class="blind">메일</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_mail_menu" style="display: block;"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_mail_count" style="display: inline-block;">99<span class="plus">+</span></span></span></em></a></li><li class="gnb_service_li" id="gnb_service_layer" style="display: inline-block;"><a href="javascript:;" class="gnb_service" onclick="gnbMoreLayer.clickToggle(); return false;"><span class="blind">서비스 더보기</span><span class="gnb_icon"></span><span class="ico_arrow"></span></a><div class="gnb_service_lyr" id="gnb_service_lyr"><div class="gnb_favorite_search" id="gnb_favorite_search"><div class="gnb_favorite_area"><div class="gnb_favorite_lstwrp"><div class="gnb_first_visit" style="display:none"><span class="blind">나만의 즐겨찾기를 추가해 보세요!</span><a href="#" class="gnb_close"><span class="blind">닫기</span></a></div><strong class="blind">즐겨찾는 서비스</strong><ul class="gnb_favorite_lst" id="gnb_favorite_lst"><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li></ul><a href="#" class="gnb_my_interface" onclick="gnbMoreLayer.clickToggleWhole(); return false;"><span class="blind">즐겨찾기 설정</span></a></div></div><div class="gnb_search_area"><div class="gnb_search_box" onmouseover="gnb_search.mouseOver(this);" onmouseout="gnb_search.mouseOut(this);"><input id="gnb_svc_search_input" type="text" title="서비스 검색" value="더 많은 서비스를 간편하게 시작하세요!" onfocus="gnb_search.clearInput(this);" onblur="gnb_search.resetInput(this);" onkeydown="gnb_search.keyDown(event);" onkeyup="gnb_search.keyUp(event);"><a href="#" class="gnb_del_txt" id="gnb_del_txt" style="display:none"><span class="blind">삭제</span></a><div class="gnb_pop_input" id="gnb_pop_input" tabindex="0" onfocus="gnb_search.searchPopOnMouse = true; return false;" onfocusout="gnb_search.searchPopOnMouse = false; return false;" onmouseover="gnb_search.searchPopOnMouse = true; return false;" onmouseout="gnb_search.searchPopOnMouse = false; return false;" style="display:none"><ul class="gnb_pop_lst"></ul></div></div><div id="gnb_search_lstwrp" class="gnb_search_lstwrp"><ul class="gnb_search_lst gnb_first"><li class="gnb_first"><a id="gnb_search_lst_first_item" href="https://cafe.naver.com/">카페</a></li><li><a href="https://news.naver.com/">뉴스</a></li><li><a href="https://map.naver.com/">지도</a></li><li><a href="https://sports.news.naver.com/">스포츠</a></li><li><a href="https://game.naver.com/">게임</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://section.blog.naver.com/">블로그</a></li><li><a href="https://post.naver.com/main.nhn">포스트</a></li><li><a href="https://dict.naver.com/">사전</a></li><li><a href="https://kin.naver.com/">지식iN</a></li><li><a href="https://weather.naver.com/">날씨</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://mail.naver.com/">메일</a></li><li><a href="https://stock.naver.com/">증권</a></li><li><a href="https://land.naver.com/">부동산</a></li><li><a href="https://vibe.naver.com/today/">VIBE</a></li><li><a href="https://book.naver.com">책</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://shopping.naver.com/">쇼핑</a></li><li><a href="https://comic.naver.com/">웹툰</a></li><li><a href="https://movie.naver.com/">영화</a></li><li><a href="https://mybox.naver.com/">MYBOX</a></li><li><a href="https://auto.naver.com/">자동차</a></li></ul></div></div><div class="gnb_banner"><a href="https://campaign.naver.com/npay/rediret/index.nhn" class="gnb_service_event"><img id="gnb_promo" alt="N페이, 이벤트 참여하면 포인트 적립!" width="265" height="47" src="https://ssl.pstatic.net/static/common/gnb/banner/promo_npay_200108.png"></a></div><div class="gnb_linkwrp"><a href="https://www.naver.com/more.html" class="gnb_service_all" id="gnb_service_all">전체 서비스 보기</a></div></div><div class="gnb_svc_more" id="gnb_svc_more" style="display: none;"><strong class="blind">네이버 주요 서비스</strong><div class="gnb_bg_top"></div><div class="gnb_svc_hd" id="gnb_svc_hd" tabindex="0"><strong class="gnb_svc_tit">바로가기 설정</strong><span class="link"><a href="https://www.naver.com/more.html">전체 서비스 보기</a></span></div><div class="gnb_svc_lstwrp"><div class="gnb_svc_lst1"><ul class="gnb_first"><li><input type="checkbox" id="nsvc_game" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_game">게임</label></li><li><input type="checkbox" id="nsvc_weather" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_weather">날씨</label></li><li><input type="checkbox" id="nsvc_shopping" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_shopping">네이버쇼핑</label></li><li><input type="checkbox" id="nsvc_navercast" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navercast">네이버캐스트</label></li><li class="gnb_event"><input type="checkbox" id="nsvc_naverpay" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_naverpay">네이버페이<em class="ic_gnb_new">New</em></label></li><li><input type="checkbox" id="nsvc_mybox" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_mybox">네이버 MYBOX</label></li><li><input type="checkbox" id="nsvc_news" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_news">뉴스</label></li><li><input type="checkbox" id="nsvc_comic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_comic">웹툰</label></li><li><input type="checkbox" id="nsvc_memo" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_memo">메모</label></li><li><input type="checkbox" id="nsvc_mail" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_mail">메일</label></li><li><input type="checkbox" id="nsvc_music" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_music">뮤직</label></li><li><input type="checkbox" id="nsvc_land" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_land">부동산</label></li><li><input type="checkbox" id="nsvc_bookmark" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_bookmark">북마크</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_blog" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_blog">블로그</label></li><li><input type="checkbox" id="nsvc_dic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dic">사전</label></li><li><input type="checkbox" id="nsvc_software" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_software">소프트웨어</label></li><li><input type="checkbox" id="nsvc_smartboard" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_smartboard">스마트보드</label></li><li><input type="checkbox" id="nsvc_sports" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_sports">스포츠</label></li><li><input type="checkbox" id="nsvc_series" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_series">시리즈</label></li><li><input type="checkbox" id="nsvc_serieson" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_serieson">시리즈on</label></li><li><input type="checkbox" id="nsvc_ya9" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_ya9">야구9단</label></li><li><input type="checkbox" id="nsvc_movie" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_movie">영화</label></li><li><input type="checkbox" id="nsvc_office" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_office">오피스</label></li><li><input type="checkbox" id="nsvc_novel" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_novel">웹소설</label></li><li><input type="checkbox" id="nsvc_auto" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_auto">자동차</label></li><li><input type="checkbox" id="nsvc_contact" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_contact">주소록</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_finance" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_finance">증권(금융)</label></li><li><input type="checkbox" id="nsvc_map" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_map">지도</label></li><li><input type="checkbox" id="nsvc_kin" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_kin">지식iN</label></li><li><input type="checkbox" id="nsvc_terms" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_terms">지식백과</label></li><li><input type="checkbox" id="nsvc_book" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_book">책</label></li><li><input type="checkbox" id="nsvc_cafe" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cafe">카페</label></li><li><input type="checkbox" id="nsvc_calendar" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_calendar">캘린더</label></li><li><input type="checkbox" id="nsvc_navertv" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navertv">네이버TV</label></li></ul></div><div class="svc_lst2"><div class="svc_spc gnb_first"><strong><a href="https://dict.naver.com/">어학사전</a></strong><ul class=""><li><input type="checkbox" id="nsvc_krdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_krdic">국어사전</label></li><li><input type="checkbox" id="nsvc_endic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_endic">영어/영영사전</label></li><li><input type="checkbox" id="nsvc_hanja" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_hanja">한자사전</label></li><li><input type="checkbox" id="nsvc_jpdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_jpdic">일어사전</label></li><li><input type="checkbox" id="nsvc_cndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cndic">중국어사전</label></li><li><input type="checkbox" id="nsvc_frdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_frdic">프랑스어사전</label></li><li><input type="checkbox" id="nsvc_dedic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dedic">독일어사전</label></li><li><input type="checkbox" id="nsvc_rudic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_rudic">러시아어사전</label></li><li><input type="checkbox" id="nsvc_vndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_vndic">베트남어사전</label></li><li><input type="checkbox" id="nsvc_spdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_spdic">스페인어사전</label></li><li><input type="checkbox" id="nsvc_papago" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_papago">파파고</label></li></ul></div><div class="svc_spc"><strong>인기/신규서비스</strong><ul class=""><li><input type="checkbox" id="nsvc_grafolio" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_grafolio">그라폴리오</label></li><li><input type="checkbox" id="nsvc_post" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_post">포스트</label></li><li><input type="checkbox" id="nsvc_band" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_band">밴드</label></li><li><input type="checkbox" id="nsvc_line" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_line">라인</label></li><li class="gnb_event"><input type="checkbox" id="nsvc_vibe" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_vibe">VIBE<em class="ic_gnb_new">New</em></label></li><li><input type="checkbox" id="nsvc_pcontents" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_pcontents">프리미엄콘텐츠</label></li></ul></div></div></div><div class="svc_btnwrp"><div class="svc_btns"><button class="gnb_save" onclick="if(gnbFavorite.addService()){gnbMoreLayer.clickToggleWhole()} return false;"><strong class="blind">확인</strong></button><button class="gnb_close" onclick="gnbFavorite.cancel(); return false;"><span class="blind">취소</span></button><button class="gnb_return" onclick="gnbFavorite.resetService(); return false;"><span class="blind">초기 설정으로 변경</span></button></div></div><div class="gnb_bg_btm"></div></div></div><iframe id="gnb_service_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display:none;top:34px;right:297px;width:585px;height:385px;opacity:0;-ms-filter:alpha(opacity=0)"></iframe><iframe id="gnb_svc_more_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display:none;top:34px;right:-4px;width:295px;height:385px;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li></ul>
+        </div>
+        <!-- 검색 -->
+        <div class="srch_area">
+
+        <span class="srch_box">
+            <label for="searchKeyword" class="blind">제목 또는 작가명 검색</label>
+            <input type="text" class="input_txt _inputSearchKeyword" id="searchKeyword" placeholder="작품명, 작가명을 입력하세요." value="" maxlength="100">
+        </span>
+          <button type="button" class="btn_search _searchBtn" id="searchBtn" onclick="clickcr(this, 'lnb.search', '', '', event)"><span class="ico_search">검색</span></button>
+        </div>
+        <!-- //검색 -->
+      </div>
+
+      <!-- LNB -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- menu -->
+      <div class="menu_area" id="lnb_height">
+
+        <ul id="lnb" class="lnb">
+          <li class="m1 ">
+            <a href="/webnovel/weekday" class="lnb_link N=a:lnb.home"><span class="lnb_txt">홈</span></a>
+          </li>
+
+          <!--[D] 뉴블릿 상시 부착 .lnb_txt에 시 new 클래스 추가 -->
+          <li class="m_super_casting ">
+            <a href="/webnovel/superCasting" class="lnb_link N=a:lnb.supercasting"><span class="lnb_txt new">슈퍼캐스팅</span></a><span class="blind">(새로 추가됨)</span>
+
+
+            <ul class="snb NE=a:story">
+
+
+
+              <li class=""><a href="/webnovel/superCasting?story=BTS" class="sub_link NPI=a:BTS"><span class="sub_txt ">CHAKHO</span></a></li>
+
+
+
+              <li class=""><a href="/webnovel/superCasting?story=ENHYPEN" class="sub_link NPI=a:ENHYPEN"><span class="sub_txt ">달의 제단</span></a></li>
+
+
+
+              <li class=""><a href="/webnovel/superCasting?story=TXT" class="sub_link NPI=a:TXT"><span class="sub_txt ">별을 쫓는 소년들</span></a></li>
+
+            </ul>
+          </li>
+
+
+          <li class="m3  ">
+            <a href="/webnovel/weekdayList" class="lnb_link N=a:lnb.today"><span class="lnb_txt">오늘의 웹소설</span></a>
+
+            <ul class="snb NE=a:tnb">
+              <li class=""><a href="/webnovel/weekdayList" class="sub_link NPI=a:tod"><span class="sub_txt">오늘</span></a></li>
+              <li class=""><a href="/webnovel/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
+
+              <li class=""><a href="/webnovel/finish" class="sub_link NPI=a:end"><span class="sub_txt">완결</span></a></li>
+            </ul>
+          </li>
+          <li class="m4  ">
+            <a href="/best/popular" class="lnb_link N=a:lnb.best"><span class="lnb_txt">베스트리그</span></a>
+
+            <ul class="snb NE=a:tnb">
+              <li class=""><a href="/best/popular" class="sub_link NPI=a:all"><span class="sub_txt">추천</span></a></li>
+              <li class=""><a href="/best/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
+              <li class=""><a href="/best/levelUp" class="sub_link NPI=a:new"><span class="sub_txt">신규 승격작</span></a></li>
+
+            </ul>
+          </li>
+          <li class="m5  ">
+            <a href="/challenge/popular" class="lnb_link N=a:lnb.challenge"><span class="lnb_txt">챌린지리그</span></a>
+
+            <ul class="snb NE=a:tnb">
+              <li class=""><a href="/challenge/popular" class="sub_link NPI=a:all"><span class="sub_txt">추천</span></a></li>
+              <li class=""><a href="/challenge/ranking" class="sub_link NPI=a:rnk"><span class="sub_txt">랭킹</span></a></li>
+
+            </ul>
+          </li>
+          <li class="m6 on sub">
+            <a href="/my/recentNovelList" class="lnb_link N=a:lnb.my"><em class="line">|</em><span class="lnb_txt">MY</span></a>
+            <span class="blind">(선택됨)</span>
+            <ul class="snb NE=a:mnb">
+              <li class=""><a href="/my/recentNovelList" class="sub_link NPI=a:recent"><span class="sub_txt">최근 본 작품</span></a></li>
+              <li class=""><a href="/my/concernNovelList" class="sub_link NPI=a:favorate"><span class="sub_txt">관심작품</span></a></li>
+              <li class=""><a href="/my/bookmarkList" class="sub_link NPI=a:bookmark"><span class="sub_txt">책갈피</span></a></li>
+              <li class="on"><a href="/my/myNovelList" class="sub_link NPI=a:mynovel"><span class="sub_txt">내 작품</span></a><span class="blind">(선택됨)</span></li>
+
+            </ul>
+          </li>
+          <li class="m7 "><a href="/my/volumeWrite" class="lnb_link N=a:lnb.write"><span class="lnb_txt">작품 올리기</span></a></li>
+        </ul>
+        <div class="genre_setting">
+          <!--[D] 설정 전 : 클래스 추가 없음
+              <a href="#" role="button" class="btn_genre">선호장르</a>
+               설정 중 : 클래스 on 추가
+               <a href="#" role="button" class="btn_genre on">선호장르</a>
+              설정 후 : 클래스 save 추가, 대체텍스트 '설정됨' 추가
+               <a href="#" role="button" class="btn_genre save">선호장르<span class="blind">설정됨</span></a>
+           -->
+
+          <a id="preferGenreSettingBtn" href="#" role="button" class="btn_genre _openPreferGenreSettingLayer save">
+            선호장르<span class="blind">설정됨</span>
+          </a>
+          <!-- 선호장르 -->
+          <!--[D] 노출 시 display:block으로 변경 -->
+          <div id="preferGenreSettingLayer" class="ly_genre_setting" style="display: none">
+            <p class="tit">선호장르 설정</p>
+            <ul class="genre_list">
+              <!--[D] 선택된 장르 li에 on클래스 추가해주세요 -->
+
+              <li id="li_preferGenre101">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre101" class="blind _selectPreferGenre(101)" value="101">
+                <label for="input_rdo_preferGenre101" class="lb_genre">로맨스</label>
+              </li>
+
+              <li id="li_preferGenre109">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre109" class="blind _selectPreferGenre(109)" value="109">
+                <label for="input_rdo_preferGenre109" class="lb_genre">로판</label>
+              </li>
+
+              <li id="li_preferGenre102" class="on">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre102" class="blind _selectPreferGenre(102)" checked="checked" value="102">
+                <label for="input_rdo_preferGenre102" class="lb_genre">판타지</label>
+              </li>
+
+              <li id="li_preferGenre110">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre110" class="blind _selectPreferGenre(110)" value="110">
+                <label for="input_rdo_preferGenre110" class="lb_genre">현판</label>
+              </li>
+
+              <li id="li_preferGenre103">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre103" class="blind _selectPreferGenre(103)" value="103">
+                <label for="input_rdo_preferGenre103" class="lb_genre">무협</label>
+              </li>
+
+              <li id="li_preferGenre000">
+                <input type="radio" name="sl_genre" id="input_rdo_preferGenre000" class="blind _selectPreferGenre(000)" value="000">
+                <label for="input_rdo_preferGenre000" class="lb_genre">설정안됨</label>
+              </li>
+            </ul>
+            <p class="dsc">선호장르를 설정하시면 여러 장르가 혼합된 화면에서 원하는 장르 작품만 필터링하여 보실 수 있습니다.</p>
+            <div class="btn_wrap">
+              <a href="#" class="btn_reset _initPreferGenre">초기화</a>
+              <a href="#" class="btn_save _savePreferGenreSetting">저장</a>
+              <button class="btn_close _closePreferGenreSettingLayer"><span class="blind">닫기</span></button>
+            </div>
+            <!--[D] 토스트/딤드 1초 내외로 사라짐 -->
+            <div id="preferGenreDim" class="dimmed" style="display: none;">
+              <p id="preferGenreToast">설정이 초기화되었습니다.</p>
+            </div>
+          </div>
+          <!-- //선호장르 -->
+        </div>
+      </div>
+      <!-- //menu -->
+    </div>
+  </div>
+  <!-- //header -->
+  <hr>
+  <!-- container -->
+  <div id="container" style="padding-top: 164px;">
+    <!-- content -->
+
+
+
+
+
+
+    <div id="content" class="my">
+      <div class="cont_sub_wrap paging_static">
+        <div class="cont_sub NE=a:myl">
+          <div class="tab_area">
+            <ul class="tab1">
+              <li class=""><a href="/my/myNovelList?novelType=best" class="htxt_best NPI=a:best">베스트리그</a></li>
+              <li><span class="line">|</span></li>
+              <li class="on"><a href="/my/myNovelList?novelType=challenge" class="htxt_challenge NPI=a:challenge">챌린지리그</a></li>
+            </ul>
+          </div>
+
+          <h3 class="blind">챌린지리그</h3>
+
+          <!-- 내 작품 목록 -->
+
+
+          <ul class="list_type2 v3">
+
+
+            <li>
+              <a href="/my/myNovelList?novelId=1058368" class="list_item NPI=a:list" title="끝난연애일까(뉴잭)">
+                <div class="pic"><img src="https://novel-phinf.pstatic.net/20140730_214/novel_1406698788840XBbup_PNG/romance_4.png?type=f150_118_2" width="100%" alt="끝난연애일까"></div>
+                <div class="list_info v6" style="width:310px">
+
+                  <p class="subj v3">끝난연애일까</p>
+                </div>
+              </a>
+              <div class="manage_area">
+                <a href="/my/novelWrite?novelId=1058368" class="but_work_manage NPI=a:manage">작품 정보 수정</a>
+                <a href="/my/volumeWrite?novelId=1058368" class="but_notice_write NPI=a:write">회차/공지 쓰기</a>
+              </div>
+            </li>
+
+          </ul>
+
+
+          <div class="paging">
+
+
+            <strong>1<span class="blind">현재 페이지</span></strong>
+
+
+
+          </div>
+          <a href="/my/novelWrite" class="but_write_new NPI=a:new">새 작품 쓰기</a>
+
+
+
+
+
+        </div>
+        <!-- aside area -->
+        <div class="cont_aside">
+
+
+
+
+
+
+          <!-- aside -->
+          <div class="bnr" id="da_280280">
+            <script async="" src="https://ssl.pstatic.net/tveta/libs/ndpsdk/prod/ndp-loader.js"></script>
+            <script>window.ndpsdk = window.ndpsdk || {cmd: [], polyfill: {cmd: []}};</script>
+            <script>
+        ndpsdk.cmd.push(function () {
+            var adSlot = ndpsdk.defineAdSlot({
+                adSlotElementId: 'da_280280',
+                adTagUrl: 'https://siape.veta.naver.com/fxshow?su=SU10359',
+                width: 280,
+                height: 280,
+            });
+            ndpsdk.displayAd('da_280280');
+
+            var checkAdSlot = ndpsdk.findAdSlot('da_280280');
+            if (!checkAdSlot) {
+                jQuery('#da_280280').remove();
+            }
+        });
+
+        // 비지원 환경은 div 제거
+        window.ndpsdk.polyfill.cmd.push(function () {
+            jQuery('#da_280280').remove();
+        });
+
+
+        jQuery(document).ready(function () {
+            removeAdDivOlderIE10();
+        });
+
+        function removeAdDivOlderIE10() {
+            if (isOlderIE10()) {
+                jQuery('#da_280280').remove();
+            }
+        }
+
+        // IE 10이하 버전인지 확인
+        function isOlderIE10() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf('MSIE ');
+            if (msie > 0) {
+                // IE 10 or older => return version number
+                return true
+            }
+
+            return false;
+        }
+
+    </script>
+            <div style="width: 280px; height: 280px; border: 0pt none;"><iframe id="da_280280_tgtLREC" width="280" height="280" frameborder="no" scrolling="no" tabindex="-1" style="border: 0px; vertical-align: bottom;" src="https://siape.veta.naver.com/fxshow?su=SU10359#frameId=da_280280_tgtLREC&amp;origin=https%3A%2F%2Fnovel.naver.com&amp;msgToken=2974644790.1737366&amp;isFluid=false&amp;runtime=NDPSDK"></iframe></div></div>
+          <!-- 일간 랭킹 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="aside_section">
+            <!-- 일간 랭킹-->
+            <h3 class="tit_league">
+
+
+              <a href="#" class="_aSideRankMore(webnovel,102)">
+
+
+
+                <em>판타지</em> 일간 랭킹
+                <span class="icon_tit_arrow"></span>
+              </a>
+            </h3>
+
+
+            <div class="league_wrap">
+              <ul class="aside_box_tab">
+                <li class="m1 " id="tabRankingWebNovel"><a href="#" class=" NPI=a:wtab _rankingWebNovel()">웹소설</a></li>
+                <li class="m2 " id="tabRankingBestNovel"><a href="#" class=" NPI=a:btab _rankingBestNovel()">베스트리그</a></li>
+                <li class="m3 on" id="tabRankingChallengeNovel"><a href="#" class=" NPI=a:ctab _rankingChallengeNovel()">챌린지리그</a></li>
+              </ul>
+              <h4 class="blind">웹소설</h4>
+              <ul id="rank_lst_m1" class="list_type2 v2" style="display:none">
+
+
+                <li>
+                  <a href="/best/list?novelId=1051341" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20220330_263/novel_1648635009436CgD0N_JPEG/320%2B320.jpg?type=f100_80_2" width="100" height="80" alt="공작가의 둔재, 회귀하다">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">1</em>
+                        <p class="subj">
+                          공작가의 둔재, 회귀...
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">파추</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=949762" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20210127_133/novel_16117423954141iHkV_JPEG/320%2B320.jpg?type=f100_80_2" width="100" height="80" alt="지구식 구원자 전형">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">2</em>
+                        <p class="subj">
+                          지구식 구원자 전형
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">외투</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=957405" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20210226_136/novel_1614334531719PXbd4_JPEG/320%2B320.jpg?type=f100_80_2" width="100" height="80" alt="이세계 강셰프">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">3</em>
+                        <p class="subj">
+                          이세계 강셰프
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">바나바다</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=1046681" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20220225_176/novel_1645788570083MG9XW_JPEG/320%2B320.jpg?type=f100_80_2" width="100" height="80" alt="튜토리얼 탑의 고인물">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">4</em>
+                        <p class="subj">
+                          튜토리얼 탑의 고인물
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">방구석김씨</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=804489" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20190527_233/novel_1558954539531E2OYv_JPEG/320%2B320.jpg?type=f100_80_2" width="100" height="80" alt="역대급 영지 설계사">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">5</em>
+                        <p class="subj">
+                          역대급 영지 설계사
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">문백경</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+              <h3><span class="blind">베스트리그</span></h3>
+              <ul id="rank_lst_m2" class="list_type2 v2" style="display:none">
+
+
+                <li>
+                  <a href="/best/list?novelId=953826" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160531_288/novel_1464704544336NIuPs_PNG/SFantasy_3.png?type=f100_80_2" width="100" height="80" alt="창성기사">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">1</em>
+                        <p class="subj">
+                          창성기사
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">손랑</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=948443" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160531_288/novel_1464704544336NIuPs_PNG/SFantasy_3.png?type=f100_80_2" width="100" height="80" alt="에라시아 대륙 이야기">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">2</em>
+                        <p class="subj">
+                          에라시아 대륙 이야기
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">수염난 아저씨</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=1004789" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20220328_84/novel_1648452320904uRbsz_JPEG/naverweb03.jpg?type=f100_80_2" width="100" height="80" alt="사신과의 근로계약">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">3</em>
+                        <p class="subj">
+                          사신과의 근로계약
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">김공공</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=1047509" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160705_201/novel_1467715404303epr5F_PNG/SFantasy_6.png?type=f100_80_2" width="100" height="80" alt="일반 직업이지만 최강 무기다.">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">4</em>
+                        <p class="subj">
+                          일반 직업이지만 최강 ...
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">오늘은쉬는날</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=1041729" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160531_288/novel_1464704544336NIuPs_PNG/SFantasy_3.png?type=f100_80_2" width="100" height="80" alt="무직이지만 최강!">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">5</em>
+                        <p class="subj">
+                          무직이지만 최강!
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">백설기 설가찡</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+              <h3><span class="blind">챌린지리그</span></h3>
+
+              <ul id="rank_lst_m3" class="list_type2 v2" style="display:block">
+
+
+                <li>
+                  <a href="/best/list?novelId=469882" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160531_288/novel_1464704544336NIuPs_PNG/SFantasy_3.png?type=f100_80_2" width="100" height="80" alt="[게임판타지] 소환술사">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">1</em>
+                        <p class="subj">
+                          [게임판타지] 소환술사
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">으음연재</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=969340" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160628_231/novel_1467103085765YXxNk_PNG/SFantasy_5.png?type=f100_80_2" width="100" height="80" alt="종말의 아이">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">2</em>
+                        <p class="subj">
+                          종말의 아이
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">가리사매</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=1057763" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20140404_195/novel_1396577052995vUz7k_PNG/SFantasy_1.png?type=f100_80_2" width="100" height="80" alt="무한 회귀자는 이제 죽고 싶다">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">3</em>
+                        <p class="subj">
+                          무한 회귀자는 이제 죽...
+
+
+
+                          <span class="bullet_wrap line2"><span class="bullet_up">UP</span></span>
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">뱀오니</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=849692" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20140404_195/novel_1396577052995vUz7k_PNG/SFantasy_1.png?type=f100_80_2" width="100" height="80" alt="초월 연대기 - 혼돈의 시대">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">4</em>
+                        <p class="subj">
+                          초월 연대기 - 혼돈의 ...
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">바늘귀</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="/best/list?novelId=565470" class="list_item">
+                    <div class="pic">
+                      <img src="https://novel-phinf.pstatic.net/20160513_121/novel_1463145004496LOfnt_PNG/SFantasy_2.png?type=f100_80_2" width="100" height="80" alt="안녕하세요 평범한 정령사 입니다">
+                      <span class="frame"></span>
+                    </div>
+                    <div class="list_info v4">
+                      <div class="info">
+                        <em class="ranking">5</em>
+                        <p class="subj">
+                          안녕하세요 평범한 정...
+
+
+
+
+
+                        </p>
+                        <p class="author">
+                          <span class="ellipsis">mushroom</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+              </ul>
+              <!-- //일간 랭킹 -->
+
+            </div>
+
+          </div>
+
+
+
+
+          <!-- //aside -->
+
+        </div>
+        <span class="line_cont"></span>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <!-- //container -->
+  <hr>
+  <!-- footer -->
+
+
+
+
+  <div id="footer">
+    <!-- 선호장르 -->
+    <div class="foot_genre_wrap">
+      <div class="inner">
+        <div class="foot_genre">
+          <!--[D] 설정 전 : 클래스 추가 없음
+              <button type="button" class="btn_genre">선호 장르</button>
+               설정 중 : 클래스 on 추가
+               <button type="button" class="btn_genre on">선호장르</button>
+              설정 후 : 클래스 save 추가, 대체텍스트 '설정됨' 추가
+               <button type="button" class="btn_genre save">선호장르<span class="blind">설정됨</span></button>
+           -->
+
+          <button id="preferGenreSettingFooterBtn" type="button" class="btn_genre _openPreferGenreSettingFooterLayer save">
+            선호장르<span class="blind">설정됨</span>
+          </button>
+
+          <!--[D] 미노출시 display:none 으로 변경 -->
+          <div id="preferGenreTooltip" class="ly_genre_info" style="display: block;">
+
+
+
+
+
+            선호장르가 <strong>'판타지'</strong>로 설정되어있어요!
+
+
+
+
+
+            <button type="button" class="btn_close _closePreferGenreTooltip"><span class="blind">닫기</span></button>
+          </div>
+          <!-- 선호장르 -->
+          <!--[D] 노출 시 display:block으로 변경 -->
+          <div id="preferGenreSettingFooterLayer" class="ly_genre_setting" style="display: none">
+            <p class="tit">선호장르 설정</p>
+            <ul class="genre_list">
+              <!--[D] 선택된 장르 li에 on클래스 추가해주세요 -->
+
+              <li id="fot_li_preferGenre101">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre101" class="blind _selectPreferGenre(101,footer)" value="101">
+                <label for="fot_input_rdo_preferGenre101" class="lb_genre">로맨스</label>
+              </li>
+
+              <li id="fot_li_preferGenre109">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre109" class="blind _selectPreferGenre(109,footer)" value="109">
+                <label for="fot_input_rdo_preferGenre109" class="lb_genre">로판</label>
+              </li>
+
+              <li id="fot_li_preferGenre102" class="on">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre102" class="blind _selectPreferGenre(102,footer)" checked="checked" value="102">
+                <label for="fot_input_rdo_preferGenre102" class="lb_genre">판타지</label>
+              </li>
+
+              <li id="fot_li_preferGenre110">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre110" class="blind _selectPreferGenre(110,footer)" value="110">
+                <label for="fot_input_rdo_preferGenre110" class="lb_genre">현판</label>
+              </li>
+
+              <li id="fot_li_preferGenre103">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre103" class="blind _selectPreferGenre(103,footer)" value="103">
+                <label for="fot_input_rdo_preferGenre103" class="lb_genre">무협</label>
+              </li>
+
+              <li id="fot_li_preferGenre000">
+                <input type="radio" name="fot_sl_genre" id="fot_input_rdo_preferGenre000" class="blind _selectPreferGenre(000,footer)" value="000">
+                <label for="fot_input_rdo_preferGenre000" class="lb_genre">설정안됨</label>
+              </li>
+            </ul>
+            <p class="dsc">선호장르를 설정하시면 여러 장르가 혼합된 화면에서 원하는 장르 작품만 필터링하여 보실 수 있습니다.</p>
+            <div class="btn_wrap">
+              <a href="#" class="btn_reset _initPreferGenre(footer)">초기화</a>
+              <a href="#" class="btn_save _savePreferGenreSetting(footer)">저장</a>
+              <button type="button" class="btn_close _closePreferGenreSettingFooterLayer"><span class="blind">닫기</span></button>
+            </div>
+            <!--[D] 토스트/딤드 1초 내외로 사라짐 -->
+            <div id="fot_preferGenreDim" class="dimmed" style="display: none;">
+              <p id="fot_preferGenreToast">설정이 초기화되었습니다.</p>
+            </div>
+          </div>
+          <!-- //선호장르 -->
+        </div>
+      </div>
+    </div>
+    <!-- //선호장르 -->
+
+    <!-- 공지사항 -->
+    <div class="foot_notice NE=a:fot">
+      <div class="inner">
+
+        <h4 class="notice"><a href="/notice" class="link NPI=a:notice">공지사항</a></h4>
+
+        <a href="/notice?docId=10000000000030672768" title="베스트리그 > 오늘의 웹소설 슈퍼패스 승격작 안내[22nd]" class="notice_dsc NPI=a:notilst,r:1">베스트리그 &gt; 오늘의 웹소설 슈퍼패스 승격작 안내[22nd]</a>
+
+
+
+        <ul class="webtoon_link_list">
+          <li class="webtoon"><a href="https://comic.naver.com/" class="link NPI=a:webtoonweb">웹툰</a></li>
+          <li class="webnovel"><a href="/" class="link NPI=a:novel">웹소설</a></li>
+          <li class="series"><a href="https://series.naver.com/novel/home.nhn" class="link NPI=a:series">시리즈 소설·만화</a></li>
+          <li class="serieson"><a href="https://serieson.naver.com/" class="link NPI=a:serieson">시리즈온 영화·방송</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- //공지사항 -->
+
+    <!-- 카피라이트 -->
+    <div class="foot_copy_wrap NE=a:fot">
+      <div class="foot_copy_group">
+        <ul class="foot_etc">
+          <li><a href="https://member.webtoon.naver.com/html/mobile_terms.html" target="_blank" class="NPI=a:wtagreement">네이버웹툰 이용약관</a></li>
+          <li><a href="https://m.comic.naver.com/store/comic/common/passJoinAgreeContract" target="_blank" class="NPI=a:termsofexcl">전용상품권 이용약관</a></li>
+          <li><a href="https://member.webtoon.naver.com/html/mobile_privacy.html" target="_blank" class="NPI=a:wtprivacy"><strong>개인정보처리방침</strong></a></li>
+          <li><a href="https://member.webtoon.naver.com/html/mobile_youthpolicy.html" target="_blank" class="NPI=a:wtyouth">청소년보호정책</a></li>
+          <li><a href="https://novel.naver.com/my/agreementPopup" target="_blank" class="NPI=a:wtprin">운영원칙</a></li>
+        </ul>
+        <ul class="foot_etc">
+          <li><a href="https://help.naver.com/support/service/main.help?serviceNo=804" target="_blank" class="NPI=a:wthelp">웹소설 고객센터</a></li>
+          <li><a href="https://comic.naver.com/business/proposalGuide#business" target="_blank" class="NPI=a:wtproposal">광고·사업문의</a></li>
+        </ul>
+        <address>
+          <a href="https://webtoonscorp.com/" target="_blank" class="corp_webtoon NPI=a:wtcorp">© NAVER WEBTOON Limited</a>
+        </address>
+      </div>
+      <div class="foot_copy_group">
+        <ul class="foot_etc">
+          <li><a href="https://policy.naver.com/rules/service.html" target="_blank" class="NPI=a:agreement">이용약관</a></li>
+          <li><a href="https://policy.naver.com/rules/privacy.html" target="_blank" class="NPI=a:privacy"><strong>개인정보처리방침</strong></a></li>
+          <li><a href="https://policy.naver.com/rules/disclaimer.html" target="_blank" class="NPI=a:disclaimer">책임의 한계와 법적 고지</a></li>
+          <li><a href="https://help.naver.com/support/home.help" target="_blank" class="NPI=a:help">고객센터</a></li>
+          <li><a href="https://help.pay.naver.com/mail/form.help?alias=checkout_accuse" target="_blank" class="NPI=a:reportofpayment">결제도용신고</a></li>
+        </ul>
+        <ul class="foot_etc">
+          <li><a href="https://cpc.naver.com/cpc/index.nhn" target="_blank" class="NPI=a:reportofcopyright">저작권침해신고</a></li>
+        </ul>
+        <address>
+          <a href="http://www.navercorp.com/" target="_blank" class="corp_naver NPI=a:nhncorp">© NAVER CORP.</a>
+        </address>
+      </div>
+      <ul class="business_info_list">
+        <li class="item">사업자등록번호 669-86-01888</li>
+        <li class="item">통신판매업 신고번호 2020-성남분당B-0719 <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6698601888" target="_blank">(사업자정보확인)</a></li>
+        <li class="item">대표이사 김준구</li>
+        <li class="item">호스팅사업자 네이버비즈니스플랫폼</li>
+      </ul>
+      <ul class="business_info_list">
+        <li class="item">주소 경기도 성남시 분당구 분당내곡로 117, 9층 (백현동, 크래프톤타워)</li>
+        <li class="item">고객센터 1588-3820</li>
+        <li class="item">이메일 <a href="mailto:ccnaver@naver.com">ccnaver@naver.com</a></li>
+      </ul>
+      <p class="foot_law">모든 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로 이용하는 경우 관련 법령에 따라 법적 책임을 질 수 있습니다.</p>
+    </div>
+    <!-- //카피라이트 -->
+
+
+
+  </div>
+
+  <div class="ly_dim" id="ly_dim">
+    <div class="bg"></div>
+  </div>
+
+
+  <div id="ly_favorite_toast" class="ly_favorite_toast" style="display: none;">
+    <p id="ly_favorite_toast_txt">관심작품 목록에 추가하였습니다.</p>
+  </div>
+
+  <!-- //footer -->
+</div>
+</body>
+</html>
