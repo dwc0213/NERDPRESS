@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>회원가입 페이지입니다.</title>
-    <link href="../../static/css/signUp.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="${path}/resources/static/css/signUp.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -13,12 +13,27 @@
     <h1>NERDPRESS SIGNUP</h1>
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="#" method="post">
-                <input class="text" type="text" name="name" placeholder="User-ID" required="">
-                <input class="text" type="password" name="PW" placeholder="Password" required="">
-                <input class="text" type="text" name="birthDate" placeholder="birth-date(ex:19980716)" required="">
-                <input class="text" type="text" name="email" placeholder="E-mail" required="">
-                <input class="text w3lpass" type="password" name="PW" placeholder="Confirm Password" required="">
+            <form action="signup/aftersignup" method="post">
+                <input class="text" type="text" name="userID" placeholder="User-ID" required=""/>
+                <input class="text" type="password" name="PW" placeholder="Password" required=""/>
+                <input class="text" type="text" name="name" placeholder="Name" required=""/>
+                <input class="text" type="text" name="birthDate" placeholder="birth-date(ex:19980716)" required=""/>
+                <input class="text" type="text" name="email" placeholder="E-mail"/>
+                성별이 남성이신 경우 아래 체크박스에 체크해주세요.
+                <input type="checkbox" class="checkbox" id="isMale" name="isMale"/>
+                <input class="text w3lpass" type="password" name="PW" placeholder="Confirm Password" required=""/>
+                <input type="hidden" id="male" name="male"/>
+                <script>
+                    $("#isMale").change(
+                        function() {
+                            if($("#isMale").is(":checked")){
+                                $("male").val('10');
+                            }else{
+                                $("#male").val('00');
+                            }
+                        }
+                    );
+                </script>
 
                     <label class="anim">
                         <input type="checkbox" class="checkbox" required="">

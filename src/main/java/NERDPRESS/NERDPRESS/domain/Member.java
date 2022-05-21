@@ -1,4 +1,4 @@
-package NERDPRESS.NERDPRESS.domain;
+package NERDPRESS.NERDPRESS.Domain;
 
 public class Member {
     private int id;//1
@@ -7,7 +7,17 @@ public class Member {
     private String name;//4
     private boolean male;//5
     private int birthDate;//6
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    private String Email;
     private byte grade;//7
+
 
     public int getId() {
         return id;

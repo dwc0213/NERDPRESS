@@ -1,10 +1,12 @@
 package NERDPRESS.NERDPRESS.Repository;
 
 import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -13,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JdbcMemberRepository implements MemberRepositoryInterface{
+public class JdbcMemberRepository implements MemberRepositoryInterface {
     private JdbcTemplate jdbcTemplate;
     @Autowired
     public JdbcMemberRepository(DataSource dataSource) {jdbcTemplate = new JdbcTemplate(dataSource);}
@@ -26,8 +28,8 @@ public class JdbcMemberRepository implements MemberRepositoryInterface{
                 output.setGrade(res.getByte("grade"));
                 output.setBirthDate(res.getInt("birthdate"));
                 output.setPW(res.getString("PW"));
-                if(res.getInt("ismale")==0) {output.setIsMale(false);}
-                else {output.setIsMale(true);}
+                if(res.getInt("ismale")==0) {output.setMale(false);}
+                else {output.setMale(true);}
                 output.setName(res.getString("name"));
                 return output;
             }
@@ -42,7 +44,7 @@ public class JdbcMemberRepository implements MemberRepositoryInterface{
         parameters.put("userId",member.getUserId());
         parameters.put("grade",member.getGrade());
         parameters.put("PW",member.getPW());
-        parameters.put("isMale",member.getIsMale());
+        parameters.put("isMale",member.getMale());
         parameters.put("birthdate",member.getBirthDate());
         parameters.put("ID",member.getId());
         jdbcInsert.execute(parameters);
@@ -60,7 +62,6 @@ public class JdbcMemberRepository implements MemberRepositoryInterface{
         return output.stream().findFirst().get();
     }
 
-    @Override
     public Member getByName(String name) {
         List<Member> output = jdbcTemplate.query("SELECT * FROM member WHERE name = ?", MemberRowMapper(), name);
         return output.stream().findFirst().get();
