@@ -1,11 +1,8 @@
 package NERDPRESS.NERDPRESS;
 
-import NERDPRESS.NERDPRESS.Repository.JdbcMemberRepository;
-import NERDPRESS.NERDPRESS.Repository.JdbcTemplateNovelRepository;
-import NERDPRESS.NERDPRESS.Repository.NovelRepositoryInterface;
+import NERDPRESS.NERDPRESS.repository.*;
 import NERDPRESS.NERDPRESS.interceptor.LoginInterceptor;
 import NERDPRESS.NERDPRESS.service.NovelService;
-import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -35,6 +32,13 @@ public class SpringConfig implements WebMvcConfigurer {
     public NovelRepositoryInterface novelRepositoryInterface() {
         return new JdbcTemplateNovelRepository(dataSource);
     }
+
+    @Bean
+    public QuestRepositoryInterface questRepositoryInterface() {return new JdbcTemplateQuestRepository(dataSource);}
+
+    @Bean
+    public LicenseRepositoryInterface licenseRepositoryInterface() {return new JdbcTemplateLicenseRepository(dataSource);}
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())

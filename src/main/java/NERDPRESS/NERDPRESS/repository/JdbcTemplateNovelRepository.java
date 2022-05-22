@@ -1,12 +1,12 @@
-package NERDPRESS.NERDPRESS.Repository;
+package NERDPRESS.NERDPRESS.repository;
 
-import NERDPRESS.NERDPRESS.Domain.Novel;
+import NERDPRESS.NERDPRESS.domain.Novel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import NERDPRESS.NERDPRESS.Repository.NovelRepositoryInterface;
+import NERDPRESS.NERDPRESS.repository.NovelRepositoryInterface;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;

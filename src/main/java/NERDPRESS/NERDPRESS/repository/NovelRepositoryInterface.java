@@ -1,6 +1,6 @@
-package NERDPRESS.NERDPRESS.Repository;
+package NERDPRESS.NERDPRESS.repository;
 
-import NERDPRESS.NERDPRESS.Domain.Novel;
+import NERDPRESS.NERDPRESS.domain.Novel;
 
 import java.util.List;
 
