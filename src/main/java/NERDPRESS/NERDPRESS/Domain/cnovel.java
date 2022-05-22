@@ -16,7 +16,6 @@ public class cnovel {
         this.fileName = fileName;
         this.contentType = contentType;
 
-        System.out.println(contentType);
     }
 
     public String getUuid() {
