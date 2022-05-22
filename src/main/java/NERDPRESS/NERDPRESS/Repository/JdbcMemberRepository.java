@@ -59,6 +59,9 @@ public class JdbcMemberRepository implements MemberRepositoryInterface {
     @Override
     public Member getByUserId(String userId) {
         List<Member> output = jdbcTemplate.query("SELECT * FROM member WHERE userId = ?", MemberRowMapper(), userId);
+        if(output.isEmpty()){
+            return null;
+        }
         return output.stream().findFirst().get();
     }
 
@@ -69,6 +72,6 @@ public class JdbcMemberRepository implements MemberRepositoryInterface {
 
     @Override
     public List<Member> getAllDomains() {
-        return jdbcTemplate.query("SELECT * FROM profile", MemberRowMapper());
+        return jdbcTemplate.query("SELECT * FROM member", MemberRowMapper());
     }
 }

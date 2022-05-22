@@ -1,47 +1,31 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>login</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-        <link rel="stylesheet" href="../../static/css/td_nth_child.css">
-    </head>
-
-    <body>
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-              <!-- Tabs Titles -->
-          
-              <!-- 이미지 -->
-              <div class="fadeIn first">
-                <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="아이콘을 넣어주세요" />
-              </div>
-          
-              <!-- 로그인 박스 -->
-              <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="아이디를 입력하세요">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="비밀번호를 입력하세요">
-                <input type="submit" class="fadeIn fourth" value="로그인">
-              </form>
-          
-              <!-- 비밀번호 분실 -->
-              <div >
-                <a class="underlineHover" href="#">비밀번호를 잊으셨습니까?</a>
-              </div>
-
-              <!-- 회원가입 -->
-              <div id="formFooter">
-                  아직 회원이 아니십니까? 
-                <a class="underlineHover" href="#">회원가입하기</a>
-              </div>
-          
-            </div>
-          </div>
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입 페이지입니다.</title>
+    <link href="../../static/css/signUp.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<!-- main -->
+<div class="main-w3layouts wrapper">
+    <h1>NERDPRESS LOGIN</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form action="login/afterlogin" method="post">
+                <input class="text" type="text" name="userID" placeholder="User-ID" required="">
+                <input class="text" type="password" name="PW" placeholder="Password" required=""/>
+                <input type="submit" value="LOGIN">
+            </form>
+        </div>
+        <p style="padding:5px;"> ※ 계정이 없으십니까? <a href="signup"> 회원가입</a> 페이지로 이동하세요</p>
+        <p style="padding:5px;"> ※ 아이디나 비밀번호를 까먹으셨나요?<a href="sendCodeToRemakePW.html"> 패스워드 </a>/<a href="findID.html"> 아이디 </a> 찾기 페이지로 이동하세요.</p>
+    </div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+        <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+    </div>
+</div>
+<!-- //main -->
+</body>
 </html>

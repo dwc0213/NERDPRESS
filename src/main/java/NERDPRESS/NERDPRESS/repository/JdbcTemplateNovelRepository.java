@@ -1,11 +1,13 @@
-package NERDPRESS.NERDPRESS.repository;
+package NERDPRESS.NERDPRESS.Repository;
 
-import NERDPRESS.NERDPRESS.domain.Novel;
+import NERDPRESS.NERDPRESS.Domain.Novel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import NERDPRESS.NERDPRESS.Repository.NovelRepositoryInterface;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -16,7 +18,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JdbcTemplateNovelRepository implements NovelRepositoryInterface{
+//@Repository
+public class JdbcTemplateNovelRepository implements NovelRepositoryInterface {
 
     // jdbcTemplate, sql 자동 사용 클래스 가져오기
     private JdbcTemplate jdbcTemplate;

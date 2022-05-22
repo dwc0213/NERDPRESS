@@ -1,11 +1,13 @@
-package NERDPRESS.NERDPRESS.repository;
+package NERDPRESS.NERDPRESS.Repository;
 
-import NERDPRESS.NERDPRESS.domain.Member;
+import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -14,7 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JdbcTemplateMemberRepository implements MemberRepositoryInterface{
+//@Repository
+public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -42,14 +45,14 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface{
     public void saveMember(Member m) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
-
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", m.getName());
         parameters.put("userId", m.getUserId());
         parameters.put("Male", m.getMale());
         parameters.put("PW", m.getPW());
-        parameters.put("birthDate", m.getUserId());
-        parameters.put("grade", m.getUserId());
+        parameters.put("birthDate", m.getBirthDate());
+        parameters.put("grade", m.getGrade());
+        parameters.put("EMail",m.getEmail());
         jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
     }
 
@@ -61,13 +64,13 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface{
 
     @Override
     public Member getByUserId(String userId) {
-        List<Member> output = jdbcTemplate.query("SELECT * FROM member WHERE id = ?", MemberRowMapper(), userId);
+        List<Member> output = jdbcTemplate.query("SELECT * FROM member WHERE Userid = ?", MemberRowMapper(), userId);
         return output.stream().findFirst().get();
     }
 
     @Override
     public List<Member> getAllDomains() {
-        return jdbcTemplate.query("SELECT * FROM profile", MemberRowMapper());
+        return jdbcTemplate.query("SELECT * FROM member", MemberRowMapper());
     }
 
 
