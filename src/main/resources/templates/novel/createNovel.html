@@ -7,16 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-
 <body>
 <div id="wrap" class="write_new">
-    <!-- 스킵네비게이션 -->
-    <div id="u_skip">
-        <a href="#lnb"><span>메인 메뉴로 바로가기</span></a>
-        <a href="#content" onclick="document.getElementById('content').tabIndex=-1;document.getElementById('content').focus();return false;"><span>본문으로 바로가기</span></a>
-    </div>
-    <!-- //스킵네비게이션 -->
-
     <!-- header -->
     <div id="header" class="fixed" style="transform: translateY(0px); transition-duration: 300ms;">
         <input type="hidden" id="encryptedIdNo" name="encryptedIdNo" value="1GsPBS">
@@ -24,14 +16,10 @@
         <input type="hidden" id="preferGenreTypeChange" value="false">
         <div class="header_inner">
             <!-- GNB -->
-
-
             <div class="sta" id="gnb_height">
                 <h1>
-                    <a href="" title="NERD PRESS" class=""h_txt_naver2>NERD PRESS</a>
-
+                    <a href="" title="NERD PRESS" class="">NERD PRESS</a>
                 </h1>
-
             </div>
         </div>
     </div>
@@ -48,32 +36,26 @@
                 </div>
                 <div class="write_cont">
                     <p class="dsc_rule">
-                        저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은 이용약관 및 관련 법률에 의하여 제재를 받을 수 있습니다.<br>
-                        작품 및 회차 연재 시 운영원칙에 동의한 것으로 간주합니다. 성인물, 폭력물 등 운영원칙에 위배되는 작품은 통보 없이 삭제될 수 있습니다.
+                        저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은 이용약관 및 관련 법률에 의하여 제재를 받을 수 있습니다.
                     </p>
-                    <form id="novelWriteForm" action="/my/novelSave" method="post">
-                        <input type="hidden" name="type" value="add">
-                        <input type="hidden" name="novelTypeCode" value="CHALLENGE">
-                        <input type="hidden" name="novelId" value="" id="novelId">
-                        <input type="hidden" name="prevContestGenre" id="prevContestGenre" value="">
+                    <form id="novelWriteForm" action="/fileUpload" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="add">
+                        <input type="hidden" name="mem_id" value="CHALLENGE">
+                        <input type="hidden" name="recoms" value="" id="novelId">
+                        <input type="hidden" name="email" id="prevContestGenre" value="">
                         <input type="hidden" name="volumeWriteRedirectYn" id="volumeWriteRedirectYn" value="N">
                         <input type="hidden" name="prevGenreCode" id="prevGenreCode" value="">
                         <fieldset>
                             <legend>새 작품 쓰기</legend>
                             <ul class="write_form NE=a:new">
-                                    <h4>작품제목</h4>
-
+                                <h4>작품제목</h4>
                                 <li>
-                                    <input type="text" id="inputNovelTitle" name="novelTitle" class="input_txt" title="작품제목" value="" onkeydown="if(event.keyCode == 27) return false;">
+                                    <input type="text" id="inputNovelTitle" name="name" class="input_txt" title="작품제목" value="">
                                 </li>
-
-
                                 <li>
                                     <h4 class="sub_tit">장르</h4>
-
-
                                     <div id="genreSelect" class="select_list genre">
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select" aria-label="Default select example" name="genre">
                                             <option value="">장르선택</option>
                                             <option value="로맨스">로맨스</option>
                                             <option value="판타지">판타지</option>
@@ -83,7 +65,6 @@
                                             <option value="자유장르">자유장르</option>
                                         </select>
                                     </div>
-							</span>
                                     <div class="right_box">
                                         <h4 class="sub_tit">연재 주기</h4>
                                         <div class="form-check form-check-inline">
@@ -114,24 +95,26 @@
                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option2">
                                             <label class="form-check-label" for="inlineCheckbox7">일</label>
                                         </div>
-
                                     </div>
                                 </li>
 
-                                    <h4>작품소개</h4>
+                                <h4>작품소개</h4>
                                 <li style="height:344px">
-
-                                    <textarea cols="30" rows="5" id="inputSynopsisContent" name="synopsisContent" class="txtarea" title="작품 소개" style="height:306px" onkeydown="if(event.keyCode == 27) return false;"></textarea>
+                                    <textarea cols="30" rows="5" id="inputSynopsisContent" name="ment" class="txtarea"></textarea>
                                 </li>
+                                <li>
+                                    <input type ="file" name="uploadfile">
+                                    <input type="submit" value="표지등록">
+                                </li>
+                                <li class="uploadResult">
 
+                                </li>
                                 <li>
                                     <h4 class="sub_tit">필명</h4>
                                     <div class="select_list genre">
                                         <input type="text" class="pil_txt">
                                     </div>
                                 </li>
-
-
                                 <li>
 
                                 </li>
