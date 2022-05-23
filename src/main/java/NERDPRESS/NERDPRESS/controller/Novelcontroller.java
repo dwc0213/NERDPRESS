@@ -1,6 +1,6 @@
 package NERDPRESS.NERDPRESS.controller;
 
-import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.domain.Member;
 import NERDPRESS.NERDPRESS.service.NovelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,6 +50,7 @@ public class Novelcontroller {
         LoginAccount loginAccount = new LoginAccount();
         loginAccount.setUserID(la.getUserID());
         loginAccount.setPW(la.getPW());
+
         // login.html에서 입력받은 ID를 Spring이 Member m에 담아주고
         // 우리는 그걸 꺼내쓰기만 하면 되죠?
         // 여기가 질문포인트: 로그인 못하면 (추후에 alert 창 추가하고) 다시 이전 페이지로 돌아가기.

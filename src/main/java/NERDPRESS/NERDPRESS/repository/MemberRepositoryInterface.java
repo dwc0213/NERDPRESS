@@ -1,6 +1,6 @@
-package NERDPRESS.NERDPRESS.Repository;
+package NERDPRESS.NERDPRESS.repository;
 
-import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
