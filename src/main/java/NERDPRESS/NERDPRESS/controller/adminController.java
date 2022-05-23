@@ -1,8 +1,9 @@
 package NERDPRESS.NERDPRESS.controller;
 
 import NERDPRESS.NERDPRESS.Domain.Member;
-import NERDPRESS.NERDPRESS.Repository.JdbcMemberRepository;
+import NERDPRESS.NERDPRESS.Repository.JdbcTemplateMemberRepository;
 import NERDPRESS.NERDPRESS.service.AdminService;
+import NERDPRESS.NERDPRESS.service.MemberService;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,17 +11,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class adminController {
 
     JdbcTemplate jdbcTemplate;
-    JdbcMemberRepository jdbcMemberRepository;
+    JdbcTemplateMemberRepository jdbcMemberRepository;
 
     AdminService adminService;
+    MemberService memberService;
 
     // 관리자 회원관리 adminidmanage - adminIDManage.html
     @GetMapping("adminidmanage")
     public String adminIdManage(Model model){
+
+        List<Member> memberList = memberService.memberListPagingService(1);
+
+        model.addAttribute("memberList", memberList);
+
 
         return "admin/adminIDManage";
     }

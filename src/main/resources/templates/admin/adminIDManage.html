@@ -72,7 +72,7 @@
     <div>
         <table class="table table-striped">
             <thead>
-            <tr>
+            <tr >
                 <th scope="col">번호</th>
                 <th scope="col">userID</th>
                 <th scope="col">E-mail</th>
@@ -80,11 +80,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row" ><a href="adminIDSearching.html">1</a></th>
-                <td>songa20</td>
-                <td >songa.kim@kakao.com</td>
-                <td> 1020</td>
+            <tr th:each="memberList : ${memberList}">
+                <th scope="row" th:text="${memberList.번호}"><a href="adminIDSearching.html"></a></th>
+                <td th:text="${memberList.userID}"></td>
+                <td th:text="${memberList.E-mail}"></td>
+                <td th:text="${memberList.추천수}"></td>
             </tr>
             <tr>
                 <th scope="row">2</th>

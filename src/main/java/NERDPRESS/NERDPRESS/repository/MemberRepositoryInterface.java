@@ -10,4 +10,9 @@ public interface MemberRepositoryInterface {
     Member getById(int id);
     Member getByUserId(String userId);
     List<Member> getAllDomains();
+
+    List<Member> pagingList(int page);
+
 }
+
+
