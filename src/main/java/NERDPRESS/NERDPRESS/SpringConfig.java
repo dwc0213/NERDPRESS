@@ -1,6 +1,6 @@
 package NERDPRESS.NERDPRESS;
 
-import NERDPRESS.NERDPRESS.repository.*;
+import NERDPRESS.NERDPRESS.Repository.*;
 import NERDPRESS.NERDPRESS.interceptor.LoginInterceptor;
 import NERDPRESS.NERDPRESS.service.NovelService;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,7 @@ public class SpringConfig implements WebMvcConfigurer {
 
     @Bean
     public MemberRepositoryInterface memberRepositoryInterface() {
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
     @Bean

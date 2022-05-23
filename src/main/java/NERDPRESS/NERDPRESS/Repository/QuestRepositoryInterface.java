@@ -1,6 +1,6 @@
-package NERDPRESS.NERDPRESS.repository;
+package NERDPRESS.NERDPRESS.Repository;
 
-import NERDPRESS.NERDPRESS.domain.Quest;
+import NERDPRESS.NERDPRESS.Domain.Quest;
 
 public interface QuestRepositoryInterface {
     

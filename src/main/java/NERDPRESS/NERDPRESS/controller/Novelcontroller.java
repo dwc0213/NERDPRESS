@@ -1,6 +1,6 @@
 package NERDPRESS.NERDPRESS.controller;
 
-import NERDPRESS.NERDPRESS.domain.Member;
+import NERDPRESS.NERDPRESS.Domain.Member;
 import NERDPRESS.NERDPRESS.service.NovelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

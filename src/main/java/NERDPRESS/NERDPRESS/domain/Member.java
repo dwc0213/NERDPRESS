@@ -1,12 +1,22 @@
-package NERDPRESS.NERDPRESS.domain;
+package NERDPRESS.NERDPRESS.Domain;
 
 public class Member {
     private int id;
     private String userId;
     private String PW;
     private String name;
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    private String Email;
     private int birthDate;
-    private boolean isMale; //남자면 true, 여자면 false
+    private boolean Male; //남자면 true, 여자면 false
     private byte grade; //유저등급, 0이면 평회원, 1이면 작가, 2면 관리자.
 
     public String getUserId() {
@@ -41,12 +51,12 @@ public class Member {
         this.birthDate = birthDate;
     }
 
-    public boolean getIsMale() {
-        return isMale;
+    public boolean getMale() {
+        return Male;
     }
 
-    public void setIsMale(boolean isMale) {
-        this.isMale = isMale;
+    public void setMale(boolean Male) {
+        this.Male = Male;
     }
 
     public byte getGrade() {

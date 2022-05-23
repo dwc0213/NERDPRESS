@@ -1,7 +1,7 @@
-package NERDPRESS.NERDPRESS.repository;
+package NERDPRESS.NERDPRESS.Repository;
 
-import NERDPRESS.NERDPRESS.domain.Member;
-import NERDPRESS.NERDPRESS.repository.MemberRepositoryInterface;
+import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
