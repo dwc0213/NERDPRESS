@@ -1,4 +1,4 @@
-package NERDPRESS.NERDPRESS.domain;
+package NERDPRESS.NERDPRESS.Domain;
 
 public class License {
     private int License_id;         // 자격증 ID (PK)

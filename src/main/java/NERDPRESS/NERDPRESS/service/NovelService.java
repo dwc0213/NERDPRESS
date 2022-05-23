@@ -1,9 +1,9 @@
 package NERDPRESS.NERDPRESS.service;
 
-import NERDPRESS.NERDPRESS.domain.Member;
-import NERDPRESS.NERDPRESS.domain.Novel;
-import NERDPRESS.NERDPRESS.repository.MemberRepositoryInterface;
-import NERDPRESS.NERDPRESS.repository.NovelRepositoryInterface;
+import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.Domain.Novel;
+import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
+import NERDPRESS.NERDPRESS.Repository.NovelRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

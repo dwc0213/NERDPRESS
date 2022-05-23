@@ -1,4 +1,4 @@
-package NERDPRESS.NERDPRESS.domain;
+package NERDPRESS.NERDPRESS.Domain;
 
 public class Quest {
     private int Quest_id;           // 문제 ID (PK)

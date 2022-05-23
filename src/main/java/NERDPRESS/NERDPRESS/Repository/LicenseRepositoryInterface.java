@@ -1,6 +1,6 @@
-package NERDPRESS.NERDPRESS.repository;
+package NERDPRESS.NERDPRESS.Repository;
 
-import NERDPRESS.NERDPRESS.domain.License;
+import NERDPRESS.NERDPRESS.Domain.License;
 
 public interface LicenseRepositoryInterface {
 
