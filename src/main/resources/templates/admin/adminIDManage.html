@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -58,12 +58,15 @@
         </ul>
     </div>
 
-    <!-- 아이디 검색 창 -->
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="검색할 ID를 입력하세요" aria-label="Recipient's username"
-               aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">ID 검색</button>
-    </div>
+    <!-- 아이디 검색 창 --><div class="input-group mb-3">
+    <form action="idsearch" method="post">
+    <input type="text" class="form-control" placeholder="검색할 ID를 입력하세요" aria-label="Recipient's username"
+           aria-describedby="button-addon2" name="idsearch">
+    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">ID 검색</button>
+    </form>
+
+</div>
+
 
     <!-- 아이디 검색 결과 -->
     <div>
@@ -78,9 +81,9 @@
             </thead>
             <tbody>
             <tr>
-                <th scope="row"><a href="adminIDSearching.html">1</a></th>
+                <th scope="row" ><a href="adminIDSearching.html">1</a></th>
                 <td>songa20</td>
-                <td>songa.kim@kakao.com</td>
+                <td >songa.kim@kakao.com</td>
                 <td> 1020</td>
             </tr>
             <tr>

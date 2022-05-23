@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -75,26 +75,26 @@
                 <li class="list-group-item">닉네임</li>
             </div>
             <div class="col-3">
-                <li class="list-group-item">연락처</li>
+                <li class="list-group-item">이메일</li>
             </div>
             <div class="col-3">
-                <li class="list-group-item">주소</li>
+                <li class="list-group-item">추천수</li>
             </div>
         </ul>
     </div>
     <div class="row">
         <ul class="list-group list-group-horizontal">
             <div class="col-3">
-                <li class="list-group-item">songaKim</li>
+                <li class="list-group-item" th:text="{$memberId}">songaKim</li>
             </div>
             <div class="col-3">
-                <li class="list-group-item">송아지송아</li>
+                <li class="list-group-item" th:text="{$memberUserId}">송아지송아</li>
             </div>
             <div class="col-3">
-                <li class="list-group-item">010-1111-2222</li>
+                <li class="list-group-item" th:text="{$memberEmail}">songaKim@gmail.com</li>
             </div>
             <div class="col-3">
-                <li class="list-group-item">서울시 서대문구</li>
+                <li class="list-group-item" th:text="$memberGrade">추천 15</li>
             </div>
         </ul>
     </div>

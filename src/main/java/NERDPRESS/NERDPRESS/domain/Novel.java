@@ -1,4 +1,4 @@
-package NERDPRESS.NERDPRESS.domain;
+package NERDPRESS.NERDPRESS.Domain;
 
 public class Novel {
     private int id;
