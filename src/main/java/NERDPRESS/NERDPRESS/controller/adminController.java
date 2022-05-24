@@ -1,15 +1,51 @@
 package NERDPRESS.NERDPRESS.controller;
 
+import NERDPRESS.NERDPRESS.Domain.Member;
+import NERDPRESS.NERDPRESS.Repository.JdbcTemplateMemberRepository;
+import NERDPRESS.NERDPRESS.service.AdminService;
+import NERDPRESS.NERDPRESS.service.MemberService;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class adminController {
 
+    JdbcTemplate jdbcTemplate;
+    JdbcTemplateMemberRepository jdbcMemberRepository;
+
+    AdminService adminService;
+    MemberService memberService;
+
     // 관리자 회원관리 adminidmanage - adminIDManage.html
     @GetMapping("adminidmanage")
-    public String adminIdManage(){
+    public String adminIdManage(Model model){
+
+        List<Member> memberList = memberService.memberListPagingService(1);
+
+        model.addAttribute("memberList", memberList);
+
+
         return "admin/adminIDManage";
+    }
+
+    @PostMapping("idsearch")
+    public String idSearch(@RequestParam ("idsearch") String idsearch, Model model) {
+        Member member = new Member();
+        member = adminService.adminIdSearchService("idsearch");
+
+        model.addAttribute("memberId", member.getId());
+        model.addAttribute("memberUserId", member.getUserId());
+        model.addAttribute("memberEmail", member.getEmail());
+        model.addAttribute("memberGrade", member.getGrade());
+
+
+        return "admin/IDSearching";
     }
 
     // 관리자 작가관리 adminwritermanage - adminWriteManage.html
