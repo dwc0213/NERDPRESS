@@ -6,7 +6,7 @@ public class episode {
     private String writer;
     private String finish;
     private String check;
-
+/*
     public episode(String subtitle, String content, String writer,String finish,String check) {
         this.subtitle = subtitle;
         this.content = content;
@@ -14,11 +14,7 @@ public class episode {
         this.finish = finish;
         this.check = check;
     }
-
-    public episode() {
-
-    }
-
+*/
     public String getSubtitle() {
         return subtitle;
     }

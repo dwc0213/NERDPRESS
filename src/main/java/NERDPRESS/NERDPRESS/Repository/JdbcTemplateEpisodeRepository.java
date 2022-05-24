@@ -22,7 +22,7 @@ public class JdbcTemplateEpisodeRepository implements EpisodeRepositoryInterface
 
     @Override
     public void saveEpisode() {
-        String sql = "INSERT INTO episodes() values(?)";
+        String sql = "INSERT INTO episodes(subtitle,content,writer,finish,check) values(?,?,?,?,?)";
 
         Connection conn = null;
         PreparedStatement pstmt = null;

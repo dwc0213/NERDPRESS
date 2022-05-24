@@ -29,19 +29,18 @@ import java.util.UUID;
 public class cnovelcontroller {
     @GetMapping("/fileUpload")
     public String fileUpload() {
-        return "/fileUpload";
+        return "novel/createNovel";
     }
 
     @PostMapping("/fileUpload")
-    public String fileUploading(@RequestParam MultipartFile[] uploadfile, Model model) throws IOException {
-
+    public String fileUploading(@RequestParam MultipartFile[] uploadfile, @ModelAttribute cnovel cnovel) throws IOException {
         List<cnovel> list = new ArrayList<>();
 
         for(MultipartFile file : uploadfile) {
             if (!file.isEmpty()) {  // 파일이 있으면,
                 cnovel f = new cnovel(UUID.randomUUID().toString(),
                         file.getOriginalFilename(),
-                        file.getContentType());
+                        file.getContentType(),cnovel.getName(),cnovel.getGenre(),cnovel.getExplanation(),cnovel.getW_name(),cnovel.getS_cycle());
                 list.add(f);
 
                 File newFile = new File(f.getUuid() + "_" + f.getFileName());
@@ -49,7 +48,7 @@ public class cnovelcontroller {
             }
         }
 
-        model.addAttribute("files", list);
+        cnovel.addAttribute("files", list);
         return "fileUploadResult";
     }
 

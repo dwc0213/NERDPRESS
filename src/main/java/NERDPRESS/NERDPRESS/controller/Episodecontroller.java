@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class Episodecontroller {
 
     EpisodeService service;
+    private NERDPRESS.NERDPRESS.Domain.episode episode;
 
     //스프링 빈 넣는곳
     @Autowired
@@ -23,19 +24,18 @@ public class Episodecontroller {
 
     @GetMapping("/write")
     public String write() {
-        return "/write";
+        return "episode/createEpisode";
     }
 
     @PostMapping("/write")
     public String writeform(@ModelAttribute Model model) {
-        episode e = new episode();
 
-        model.addAttribute("episode", e);
+        System.out.println(model);
+        model.addAttribute("episode",model);
 
         //DB저장
-        service.join(e);
-
-
+        service.join(episode);
+        
         return "episode/listEpisode";
     }
 }
