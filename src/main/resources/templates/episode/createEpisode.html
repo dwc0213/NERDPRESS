@@ -36,44 +36,33 @@
                 </div>
                 <div class="write_cont">
                     <h3 class="work_tit">끝난연애일까</h3>
-                    <form id="writeForm" action="/my/volumeSave" method="post">
-                        <input type="hidden" name="type" id="type" value="add">
-                        <input type="hidden" name="novelId" id="novelId" value="1058368">
-                        <input type="hidden" name="novelStatusCode" id="novelStatusCode" value="N">
-                        <input type="hidden" name="volumeNo" id="volumeNo" value="">
-                        <input type="hidden" name="noticeYn" id="noticeYn" value="N">
-                        <input type="hidden" name="noticeType" id="noticeType" value="">
-                        <input type="hidden" name="seq" id="seq" value="0">
+                    <form id="writeForm" action="/write" method="post">
                         <fieldset>
                             <legend>회차/공지 쓰기</legend>
                             <ul class="write_form NE=a:edt">
                                 <li>
                                     <h4>제목</h4>
-                                    <input type="text" id="inputVolumeTitle" name="volumeTitle" value="" class="input_txt" title="제목" onkeydown="if(event.keyCode == 27 || event.keyCode == 13) return false;">
+                                    <input type="text" name="subtitle" style="width:925px; border:1px solid black;"/>
                                 </li>
                                 <li class="auto">
                                     <!-- 작품 내용 -->
                                     <h4>내용</h4>
-                                    <div class="del_lf_space">
-                                        <span class="m_line"></span>
-                                        <textarea cols="30" rows="5" id="inputContent" name="content" class="txtarea" title="내용" onkeydown="if(event.keyCode == 27) return false;"></textarea>
-                                    </div>
-
+                                        <textarea cols="30" rows="5" id="inputContent" name="content" class="txtarea" title="내용"></textarea>
                                 </li>
                                 <li style="height:130px">
                                     <!-- 작가의 말 -->
                                     <h4>작가의 말</h4>
-                                    <textarea cols="30" rows="5" id="inputAuthorTalk" name="authorTalkContent" class="txtarea" style="height:92px" title="작가의 말" onkeydown="if(event.keyCode == 27) return false;"></textarea>
+                                    <textarea cols="30" rows="5" id="inputAuthorTalk" name="writer" class="txtarea" style="height:92px" title="작가의 말" onkeydown="if(event.keyCode == 27) return false;"></textarea>
                                 </li>
                                 <li class="setting_area">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" name="finish" value="" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
                                             완결(작품페이지에 완결로 노출됩니다.)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                        <input class="form-check-input" type="checkbox" name="check" value="" id="defaultCheck2">
                                         <label class="form-check-label" for="defaultCheck1">
                                             운영원칙에 동의합니다
                                         </label>
@@ -82,8 +71,7 @@
                             </ul>
                             <div class="bt_area v2 NE=a:edt">
                                 <button type="button" class="but_cancel2 NPI=a:cancel _cancelWriteBtn(add,1058368)">취소</button>
-                                <button type="button" class="but_tempsave2 NPI=a:save _tempSavingBtn(direct)">임시저장</button>
-                                <button type="button" class="but_regist NPI=a:submit _saveVolume()">등록</button>
+                                <button type="submit" class="but_regist NPI=a:submit _saveVolume()">등록</button>
                             </div>
                         </fieldset>
                     </form>
