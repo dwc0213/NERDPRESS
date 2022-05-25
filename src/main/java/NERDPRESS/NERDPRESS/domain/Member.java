@@ -18,7 +18,7 @@ public class Member {
     private int birthDate;
     private boolean Male; //남자면 true, 여자면 false
     private byte grade; //유저등급, 0이면 평회원, 1이면 작가, 2면 관리자.
-    private int recommand; // 추천수
+    private int recommend; // 추천수
 
 
 
@@ -78,11 +78,11 @@ public class Member {
         this.id = id;
     }
 
-    public int getRecommand() {
-        return recommand;
+    public int getRecommend() {
+        return recommend;
     }
 
-    public void setRecommand(int recommand) {
-        this.recommand = recommand;
+    public void setRecommend(int recommend) {
+        this.recommend = recommend;
     }
 }

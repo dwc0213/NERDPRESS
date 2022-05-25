@@ -6,6 +6,8 @@ import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import NERDPRESS.NERDPRESS.Repository.QuestRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class MyPageService {
     private MemberRepositoryInterface memberRepository;
     private QuestRepositoryInterface questRepository;
@@ -33,7 +35,7 @@ public class MyPageService {
     public int inquirePoint(String userID){
         return memberRepository.getPoint(userID);
     }
-    public Quest getQuest(int licenseId) {
+    public List<Quest> getQuest(int licenseId) {
         return questRepository.findQuest(licenseId);
     }
 }

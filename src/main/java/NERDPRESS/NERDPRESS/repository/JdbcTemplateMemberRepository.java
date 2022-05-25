@@ -1,13 +1,11 @@
 package NERDPRESS.NERDPRESS.Repository;
 
 import NERDPRESS.NERDPRESS.Domain.Member;
-import NERDPRESS.NERDPRESS.Repository.MemberRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -37,7 +35,7 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
                 output.setGrade(res.getByte("grade"));
                 output.setMale(res.getBoolean("male"));
                 output.setBirthDate(res.getInt("birthdate"));
-                output.setRecommand(res.getInt("recommand"));
+                output.setRecommend(res.getInt("recommand"));
                 return output;
             }
         };
@@ -45,8 +43,9 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     @Override
     public void saveMember(Member m) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
-        jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
+        jdbcInsert.withTableName("member");
         Map<String, Object> parameters = new HashMap<>();
+        parameters.put("id", "auto_mem_id.NEXTVAL");
         parameters.put("name", m.getName());
         parameters.put("userId", m.getUserId());
         parameters.put("Male", m.getMale());

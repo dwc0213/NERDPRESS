@@ -44,9 +44,9 @@ public class JdbcTemplateQuestRepository implements QuestRepositoryInterface {
     @Override
     public void saveQuest(Quest q) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
-
+        jdbcInsert.withTableName("quest");
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("Quest_id", q.getQuest_id());
+        parameters.put("Quest_id", "auto_quest_id.NEXTVAL");
         parameters.put("License_id", q.getLicense_id());
         parameters.put("Quest_title", q.getQuest_title());
         parameters.put("Q_one", q.getQ_one());
@@ -60,10 +60,10 @@ public class JdbcTemplateQuestRepository implements QuestRepositoryInterface {
 
     // License_id (자격증 ID) 에 해당하는 문제 모두 출력
     @Override
-    public Quest findQuest(int license_id) {
+    public List<Quest> findQuest(int license_id) {
         List<Quest> questList = jdbcTemplate.query("SELECT * FROM quest where License_id = ?", questRowMapper(), license_id);
 
-        return questList.stream().findFirst().get();
+        return questList;
     }
 }
 

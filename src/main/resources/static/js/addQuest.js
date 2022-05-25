@@ -1,10 +1,5 @@
 function addQuestCheck(){
 
-    if ($("#Quest_id").val() == "") {
-        alert("문제 ID를 입력해주세요");
-        $("#Quest_id").focus();
-        return false;
-    }
     if ($("#License_id").val() == "") {
         alert("자격증 종류를 선택해주세요");
         $("#License_id").focus();

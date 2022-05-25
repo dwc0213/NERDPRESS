@@ -40,9 +40,10 @@ public class JdbcTemplateLicenseRepository implements LicenseRepositoryInterface
     @Override
     public void saveLicense(License l) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
+        jdbcInsert.withTableName("license");
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("License_id", l.getLicense_id());
+        parameters.put("License_id", "auto_license_id.NEXTVAL");
         parameters.put("License_type", l.getLicense_type());
 
         jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
