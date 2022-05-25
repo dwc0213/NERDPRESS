@@ -30,7 +30,6 @@
 <!-- upperBar -->
 <div data-include-path="../content/upperBar.html"></div>
 <script>
-
     window.addEventListener('load', function() {
         var allElements = document.getElementsByTagName('*');
         Array.prototype.forEach.call(allElements, function(el) {
@@ -82,47 +81,37 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th style="width:20%"scope="col-1">메뉴</th>
+                <th style="width:20%"scope="col-1" rowspan="2">메뉴</th>
                 <th scope="col" colspan="5">보여주기</th>
 
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">
-                    <a href="content.html">1</a>
+                <th scope="row" stype="height:10%;">
+                    <a href="/renewMyInfo">개인정보 수정</a>
                 </th>
                 <td style="background-color:white;" rowspan="10" colspan="3"></td>
             </tr>
             <tr>
-                <th scope="row">2</th>
-
+                <th scope="row">
+                    <a href="/renewMyPW">비밀번호 수정</a>
+                </th>
             </tr>
             <tr>
-                <th scope="row">3</th>
-
+                <th scope="row">
+                    <a href="/purchase">포인트 사기</a>
+                </th>
             </tr>
             <tr>
-                <th scope="row">4</th>
-
+                <th scope="row">
+                    <a href="/solveQuest">문제 풀고 포인트 적립</a>
+                </th>
             </tr>
             <tr>
-                <th scope="row">5</th>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
+                <th scope="row">
+                    <a href="/myBookMark">나의 서재</a>
+                </th>
             </tr>
 
             </tbody>
