@@ -73,5 +73,14 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
         return jdbcTemplate.query("SELECT * FROM member", MemberRowMapper());
     }
 
+    @Override
+    public List<Member> pagingList(int page) {
+
+        List<Member> memberList = jdbcTemplate.query("Select Board_id, Board_title, Board_writer from (Select rownum as rn, Board_id, Board_title, Board_writer from Board) where rn between " + ((page -1) * 10 + 1)  +"and" + 19, MemberRowMapper());
+
+
+        return memberList;
+    }
+
 
 }
