@@ -9,6 +9,16 @@ public interface MemberRepositoryInterface {
     void saveMember(Member member);
     Member getById(int id);
     Member getByUserId(String userId);
-    Member getByName(String name);
     List<Member> getAllDomains();
+
+    void setPoint(String userID, int i);
+
+    int getPoint(String userID);
+
+    void changeAsset(String colname, String input, String userID);
+
+    List<Member> pagingList(int page);
+
 }
+
+
