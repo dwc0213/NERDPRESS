@@ -5,8 +5,9 @@ public class Member {
     private String userId;
     private String PW;
     private String name;
+    private String Email;
     private int birthDate;
-    private boolean isMale; //남자면 true, 여자면 false
+    private boolean Male; //남자면 true, 여자면 false
     private byte grade; //유저등급, 0이면 평회원, 1이면 작가, 2면 관리자.
 
     public String getUserId() {
@@ -33,6 +34,14 @@ public class Member {
         this.name = name;
     }
 
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
     public int getBirthDate() {
         return birthDate;
     }
@@ -41,12 +50,12 @@ public class Member {
         this.birthDate = birthDate;
     }
 
-    public boolean getIsMale() {
-        return isMale;
+    public boolean getMale() {
+        return Male;
     }
 
-    public void setIsMale(boolean isMale) {
-        this.isMale = isMale;
+    public void setMale(boolean isMale) {
+        this.Male = Male;
     }
 
     public byte getGrade() {
