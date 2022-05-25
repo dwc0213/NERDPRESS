@@ -50,7 +50,12 @@ public class adminController {
 
     // 관리자 작가관리 adminwritermanage - adminWriteManage.html
     @GetMapping("adminwritermanage")
-    public String adminWriterManage(){
+    public String adminWriterManage(Model model){
+
+        List<Member> writerList = memberService.writerListPagingService(1);
+
+        model.addAttribute("writerList", writerList);
+
         return "admin/adminWriterManage";
     }
 

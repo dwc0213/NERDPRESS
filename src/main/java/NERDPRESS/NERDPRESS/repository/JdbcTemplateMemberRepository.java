@@ -37,6 +37,7 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
                 output.setGrade(res.getByte("grade"));
                 output.setMale(res.getBoolean("male"));
                 output.setBirthDate(res.getInt("birthdate"));
+                output.setRecommand(res.getInt("recommand"));
                 return output;
             }
         };
@@ -76,10 +77,18 @@ public class JdbcTemplateMemberRepository implements MemberRepositoryInterface {
     @Override
     public List<Member> pagingList(int page) {
 
-        List<Member> memberList = jdbcTemplate.query("Select Board_id, Board_title, Board_writer from (Select rownum as rn, Board_id, Board_title, Board_writer from Board) where rn between " + ((page -1) * 10 + 1)  +"and" + 19, MemberRowMapper());
+        List<Member> memberList = jdbcTemplate.query("Select id, userId, email, recommand from (Select rownum as rn, id, userId, email from member) where rn between " + ((page -1) * 10 + 1)  +"and" + 19, MemberRowMapper());
 
 
         return memberList;
+    }
+
+    @Override
+    public List<Member> pagingWriterList(int page){
+
+        List<Member> writerList = jdbcTemplate.query("Select id, userId, email, recommand from (Select rownum as rn, id, userId, email from member) where grade=1 AND (rn between" + ((page -1) * 10 + 1)  + "and" + 19 +")", MemberRowMapper());
+
+        return writerList;
     }
 
 

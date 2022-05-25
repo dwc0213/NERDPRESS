@@ -15,9 +15,16 @@ public class MemberService {
 
     public List<Member> memberListPagingService(int page){
 
-        List<Member> memberlist = memberRepository.pagingList(page);
+        List<Member> memberList = memberRepository.pagingList(page);
 
-        return memberlist;
+        return memberList;
+    }
+
+    public List<Member> writerListPagingService(int page){
+
+        List<Member> writerList = memberRepository.pagingWriterList(page);
+
+        return writerList;
     }
 
 }

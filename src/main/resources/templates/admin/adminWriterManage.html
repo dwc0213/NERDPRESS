@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -67,17 +67,16 @@
                 <th scope="col">닉네임</th>
                 <th scope="col">연락처</th>
                 <th scope="col">주소</th>
-                <th scope="col">탈퇴여부</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row"><a href="adminWriterSearching.html">songaKim</a></th>
-                <td>송아지송아</td>
-                <td>010-1111-2222</td>
-                <td>서울시 서대문구</td>
-                <td>탈퇴한 작가</td>
-                <td>
+            <tr th:each="writerList : ${writerList}">
+                <th scope="row" th:text="${writerList.ID}"><a href="adminWriterSearching.html"></a></th>
+                <td th:text="${writerList.닉네임}"></td>
+                <td th:text="${writerList.연락처}"></td>
+                <td th:text="${writerList.주소}"></td>
+            </tr>
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link active text-secondary" aria-current="page" href="#">신고내용 확인</a>

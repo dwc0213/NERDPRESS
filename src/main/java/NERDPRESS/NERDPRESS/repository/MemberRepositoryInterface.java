@@ -12,6 +12,7 @@ public interface MemberRepositoryInterface {
     List<Member> getAllDomains();
 
     List<Member> pagingList(int page);
+    List<Member> pagingWriterList(int page);
 
 }
 
